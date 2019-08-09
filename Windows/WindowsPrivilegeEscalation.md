@@ -8,7 +8,8 @@
 ## Web Shell for Windows 
 - [PHP Web Shell]
     Test if PHP works
-    ```<?php phpinfo(); ?>
+    ```phpinfo
+    <?php phpinfo(); ?>
     ```
     Command Execution
     ```php webshell
