@@ -17,6 +17,10 @@ PHP Web Shell
 ```
 - Go to http://victimsite.com/test.php?cmd=dir for command execution 
 
+## Reverse Shell 
+
+[Invoke Powershell](https://raw.githubusercontent.com/samratashok/nishang/master/Shells/Invoke-PowerShellTcp.ps1)
+
 ## Process
 - systeminfo
 	* Gives us system info 
@@ -141,6 +145,7 @@ accesschk.exe
 
 ## Automated Tools
 * [Windows Exploit Suggester](https://github.com/GDSSecurity/Windows-Exploit-Suggester)
+* [Sherlock](https://github.com/rasta-mouse/Sherlock)
 
 ## Cheat Sheets
 * [Reverse Shell](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
