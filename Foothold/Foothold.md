@@ -1,6 +1,5 @@
 # ariel-shin Foothold Methodology 
-### Based on [sushant747 List of common ports](https://sushant747.gitbooks.io/total-oscp-guide/list_of_common_ports.html)
-### A majority of this guide is modified from sushant.
+### Based on [sushant747 List of common ports](https://sushant747.gitbooks.io/total-oscp-guide/list_of_common_ports.html). A majority of this guide is modified from sushant747.
 
 ## Summary 
 * [Port 21 - FTP](#Port-21---FTP)
