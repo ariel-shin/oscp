@@ -460,8 +460,6 @@ There are also metasploit modules for Windows 2000 SP4 and Windows Xp SP0/SP1
 
 ## Port 443 - HTTPS
 
-[Back](#summary)
-
 ### Heartbleed
 
 #### nmap 
@@ -549,8 +547,6 @@ Default port for Microsoft SQL.
 ```mssql
 sqsh -S 192.168.1.101 -U sa
 ```
-
-[Back](#summary)
 
 ### Execute Commands
 ```exec
@@ -690,10 +686,10 @@ Brute force
 ncrack -vv --user Administrator -P /root/passwords.txt rdp://192.168.1.101
 ```
 
-[Back](#summary)
-
 ### MS12-020
 This is categorized by microsoft as a RCE vulnerability. But there is no POC for it online. You can only DOS a machine using this exploit.
+
+[Back](#summary)
 
 ## Port 4445 - Upnotifyp
 Not much found anything here. Try connecting with netcat and visiting in browser.
@@ -737,8 +733,6 @@ vncviewer
 ```
 vncviewer 192.168.1.109
 ```
-
-[Back](#summary)
 
 ### Ctrl-alt-del
 * If you are unable to input ctr-alt-del (kali might interpret it as input for kali).
