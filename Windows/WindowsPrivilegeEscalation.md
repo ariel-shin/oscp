@@ -212,10 +212,9 @@ $ net users Administrator
 	wmic process
 	```
 	* Look for services running as root
-	```
+	~~~~
 	tasklist /SVC
-	```
-	
+	~~~~
 		* Running processes to started services
 		* Looking for upnphost
 		* [Fuzzy Security Write-up - nc.exe](http://www.fuzzysecurity.com/tutorials/16.html)
