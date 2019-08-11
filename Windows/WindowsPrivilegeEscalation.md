@@ -397,7 +397,7 @@ $ wine hyperion.exe ../backdoor.exe ../backdoor_mutation.exe
 * [Sherlock](https://github.com/rasta-mouse/Sherlock)
 
 ## Resources
-* CHECKLIST (https://github.com/netbiosX/Checklists/blob/master/Windows-Privilege-Escalation.md)
+* [CHECKLIST](https://github.com/netbiosX/Checklists/blob/master/Windows-Privilege-Escalation.md)
 * [Reverse Shell](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
 )
 * [Spreadsheet with Resources](https://docs.google.com/spreadsheets/d/12bT8APhWsL-P8mBtWCYu4MLftwG1cPmIL25AEBtXDno/edit#gid=2075148101)
