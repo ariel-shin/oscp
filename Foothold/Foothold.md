@@ -2,8 +2,8 @@
 ### Based on [sushant747 List of common ports](https://sushant747.gitbooks.io/total-oscp-guide/list_of_common_ports.html). A majority of this guide is modified from sushant747.
 
 ## Summary 
-* [Discovering Open Ports](##Discovering-Open-Ports)
-* [File Upload Capability](##-File-Upload-Capability)
+* [Discovering Open Ports](##discovering-open-ports)
+* [File Upload Capability](##file-upload-capability)
 * [Port 21 - FTP](#Port-21---FTP)
 * [Port 22 - SSH](#Port-22---SSH)
 * [Port 23 - Telnet](#Port-23---Telnet)
@@ -15,11 +15,11 @@
 * [Port 111 - Rpcbind](#Port-111---Rpcbind)
 * [Port 119 - NNTP](#Port-119---NNTP)
 * [Port 135 - MSRPC](#Port-135---MSRPC)
-* [Port 139 and 445 - SMB/Samba Shares](#Port-139-and-445---SMB/Samba-Shares)
-* [Port 143/993 - IMAP](#Port-143/993---IMAP)
+* [Port 139 and 445 - SMB/Samba Shares](#port-139-and-445---smbsamba-shares)
+* [Port 143/993 - IMAP](#port-143993---imap)
 * [Port 161 and 162 - SNMP](#Port-161-and-162---SNMP)
 * [Port 199 - Smux](#Port-199---Smux)
-* [Port 389/636 - Ldap](#Port-389/636---Ldap)
+* [Port 389/636 - Ldap](#Port-389636---Ldap)
 * [Port 443 - HTTPS](#Port-443---HTTPS)
 * [Port 554 - RTSP](#Port-554---RTSP)
 * [Port 587 - Submission](#Port-587---Submission)
@@ -27,7 +27,7 @@
 * [Port 993 - Imap Encrypted](#Port-993---Imap-Encrypted)
 * [Port 995 - POP3 Encrypten](#Port-995---POP3-Encrypten)
 * [Port 1025 - NFS or IIS](#Port-1025---NFS-or-IIS)
-* [Port 1030/1032/1033/1038](#Port-1030/1032/1033/1038)
+* [Port 1030/1032/1033/1038](#Port-1030103210331038)
 * [Port 1433 - MsSQL](#Port-1433---MsSQL)
 * [Port 1521 - Oracle database](#Port-1521---Oracle-database)
 * [Ports 1748, 1754, 1808, 1809 - Oracle](#Ports-1748,-1754,-1808,-1809---Oracle)
@@ -45,7 +45,7 @@
 * [Port 5900 - VNC](#Port-5900---VNC)
 * [Port 8080](#Port-8080)
 * [Port 9389](#Port-9389)
-* [Tips for when you're stuck](#Tips-for-when-you're-stuck)
+* [Tips for when you're stuck](#tips-for-when-youre-stuck)
 
 ## MUST RUN: ipconfig/ifconfig && whoami && cat local.txt
 ## MUST RUN: ipconfig/ifconfig && whoami && cat proof.txt
