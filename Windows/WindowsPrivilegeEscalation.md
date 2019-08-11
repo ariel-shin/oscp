@@ -255,11 +255,12 @@ $ net users Administrator
 	```
 	* OR remove the dependency
 		* remove the dependency
+			```
+			> exploit/windows/local/service_permissions
+			```
 			- remove the dependency
 		  * remove
-	```
-	> exploit/windows/local/service_permissions
-	```
+
 	* Can also use accesschk.exe
 - powershell
 	* check for powershell
