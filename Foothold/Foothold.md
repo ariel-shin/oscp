@@ -1,6 +1,8 @@
 # ariel-shin Foothold Methodology 
 ### Based on [sushant747 List of common ports](https://sushant747.gitbooks.io/total-oscp-guide/list_of_common_ports.html). A majority of this guide is modified from sushant747.
 
+## MUST RUN: ipconfig/ifconfig && whoami && cat local.txt/proof.txt
+
 ## Summary 
 * [Discovering Open Ports](#discovering-open-ports)
 * [File Upload Capability](#file-upload-capability)
@@ -43,12 +45,9 @@
 * [Port 5357 - WSDAPI](#Port-5357---WSDAPI)
 * [Port 5722 - DFSR](#Port-5722---DFSR)
 * [Port 5900 - VNC](#Port-5900---VNC)
-* [Port 8080](#Port-8080)
-* [Port 9389](#Port-9389)
+* [Port 8080](#Port-8080--HTTP-Alternate)
+* [Port 9389](#Port-9389--Active-Directory-Web-Services)
 * [Tips for when you're stuck](#tips-for-when-youre-stuck)
-
-## MUST RUN: ipconfig/ifconfig && whoami && cat local.txt
-## MUST RUN: ipconfig/ifconfig && whoami && cat proof.txt
 
 ## Discovering Open Ports 
 * Nmap 
@@ -80,6 +79,8 @@ Find common vulnerabilities
 ```nmapscripts
 nmap -T4 -p445 --script vuln 10.10.10.# -oN outputFile.txt
 ```
+
+[Back](#summary)
 
 ## File Upload Capability
 
@@ -124,6 +125,8 @@ TODO: USAGE
 		apache2ctl start | stop
 		```
 
+[Back](#summary)
+
 ## Port 21 - FTP
 FIRST STEP: Discover version number from nmap or steps below
 Connect to the ftp-server to enumerate software and version 
@@ -144,6 +147,8 @@ local: accesschk.exe remote: accesschk.exe
 331888 bytes sent in 0.27 secs (1.1515 MB/s)
 ```
 
+[Back](#summary)
+
 ## Port 22 - SSH 
 Can determine version by scanning it with nmap or connecting to it with nc or telnet
 ```nc
@@ -151,12 +156,16 @@ nc 192.168.1.10 22
 telnet 192.168.1.10 22
 ```
 
+[Back](#summary)
+
 ## Port 23 - Telnet
 Telnet is considered insecure because it does not encrypt traffic. Search exploit-db and it will show various RCE-vulnerbailites on different versions. 
 * Brute Force it
 ```bt
 hydra -l root -P /root/SecLists/Passwords/10_million_password_list_top_100.txt 192.168.1.101 telnet
 ```
+
+[Back](#summary)
 
 ## Port 25 - SMTP
 * SMTP is a server to server service. The user receives or sends emails using IMAP or POP3. Those messages are then routed to the SMTP-server which communicates the email to another server. The SMTP-server has a database with all emails that can receive or send emails. We can use SMTP to query that database for possible email-addresses. Notice that we cannot retrieve any emails from SMTP. We can only send emails.
@@ -200,8 +209,12 @@ hydra -l root -P /root/SecLists/Passwords/10_million_password_list_top_100.txt 1
 	smtp-user-enum -M VRFY -U /root/sectools/SecLists/Usernames/Names/names.txt -t 192.168.1.103
 	```
 
+[Back](#summary)
+
 ## Port 69 - TFTP
 Ftp-server but it uses UDP
+
+[Back](#summary)
 
 ## Port 80 - HTTP
 * nikto -h url -o niktodp80.txt
@@ -231,10 +244,14 @@ Ftp-server but it uses UDP
 	* WPScan
 	* Appearance --> Editor --> edit index.php with reverse shell 
 
+[Back](#summary)
+
 ## Port 88 - Kerberos
 Kerberos is a protocol that is used for network authentication. Different versions are used by \*nix and Windows. But if you see a machine with port 88 open you can be fairly certain that it is a Windows Domain Controller.
 If you already have a login to a user of that domain you might be able to escalate that privilege.
 Check out: MS14-068
+
+[Back](#summary)
 
 ## Port 110 - POP3
 This service is used for fetching emails on a email server. So the server that has this port open is probably an email-server, and other clients on the network (or outside) access this server to fetch their emails.
@@ -249,6 +266,8 @@ list
 # Retrive email number 5, for example
 retr 5
 ```
+
+[Back](#summary)
 
 ## Port 111 - Rpcbind
 RFC: 1833
@@ -275,9 +294,13 @@ change directories and view files
 * Look for sensitive information (e.g. passwords, file locations, ssh keys, etc)
 * See if there is file upload capability
 
+[Back](#summary)
+
 ## Port 119 - NNTP
 Network time protocol. It is used synchronize time. If a machine is running this server it might work as a server for synchronizing time. So other machines query this machine for the exact time.
 An attacker could use this to change the time. Which might cause denial of service and all around havoc.
+
+[Back](#summary)
 
 ## Port 135 - MSRPC
 Windows RPC-Port
@@ -288,8 +311,12 @@ Vulnerable to MS ? TO DO
 nmap 192.168.0.101 --script=msrpc-enum
 ```
 
+[Back](#summary)
+
 ## Port 139 and 445 - SMB/Samba Shares
 Samba is a service that enables the user to share files with other machines. It has interoperatibility, which means that it can share stuff between linux and windows systems. A windows user will just see an icon for a folder that contains some files. Even though the folder and files really exists on a linux-server.
+
+[Back](#summary)
 
 ### smbclient 
 * For linux-users you can log in to the smb-share using smbclient, like this:
@@ -346,10 +373,14 @@ nbtscan -r 192.168.1.1/24
 ```
 * [Netbios Write-up](https://null-byte.wonderhowto.com/how-to/enumerate-netbios-shares-with-nbtscan-nmap-scripting-engine-0193957/)
 
+[Back](#summary)
+
 ## Port 143/993 - IMAP
 * IMAP lets you access email stored on that server. So imagine that you are on a network at work, the emails you recieve is not stored on your computer but on a specific mail-server. So every time you look in your inbox your email-client (like outlook) fetches the emails from the mail-server using imap.
 * IMAP is a lot like pop3. But with IMAP you can access your email from various devices. With pop3 you can only access them from one device.
 * Port 993 is the secure port for IMAP.
+
+[Back](#summary)
 
 ## Port 161 and 162 - SNMP
 Simple Network Management Protocol
@@ -407,7 +438,11 @@ With onesixtyone you can test for open ports but also brute force community stri
 ### Metasploit
 There are a few [snmp modules in metasploit](https://www.offensive-security.com/metasploit-unleashed/snmp-scan/) that you can use. snmp_enum can show you usernames, services, and other stuff.
 
+[Back](#summary)
+
 ## Port 199 - Smux
+
+[Back](#summary)
 
 ## Port 389/636 - Ldap
 Lightweight Directory Access Protocol. This port is usually used for Directories. Directory her means more like a telephone-directory rather than a folder. Ldap directory can be understood a bit like the windows registry. A database-tree. Ldap is sometimes used to store usersinformation. Ldap is used more often in corporate structure. Webapplications can use ldap for authentication. If that is the case it is possible to perform ldap-injections which are similar to sqlinjections.
@@ -421,7 +456,11 @@ When a client connects to the Ldap directory it can use it to query data, or add
 Port 636 is used for SSL.
 There are also metasploit modules for Windows 2000 SP4 and Windows Xp SP0/SP1
 
+[Back](#summary)
+
 ## Port 443 - HTTPS
+
+[Back](#summary)
 
 ### Heartbleed
 
@@ -462,13 +501,18 @@ use auxiliary/scanner/ssl/openssl_heartbleed
 * WordPress
 	* WPScan
 
+[Back](#summary)
 
 ## Port 554 - RTSP
 RTSP (Real Time Streaming Protocol) is a stateful protocol built on top of tcp usually used for streaming images. Many commercial IP-cameras are running on this port. They often have a GUI interface, so look out for that.
 
+[Back](#summary)
+
 ## Port 587 - Submission
 * Outgoing smtp-port
 * If Postfix is run on it it could be vunerable to [shellshock](https://www.exploit-db.com/exploits/34896/)
+
+[Back](#summary)
 
 ## Port 631 - Cups
 * Common UNIX Printing System has become the standard for sharing printers on a linux-network. You will often see port 631 open in your priv-esc enumeration when you run netstat. You can log in to it here: http://localhost:631/admin
@@ -476,25 +520,37 @@ RTSP (Real Time Streaming Protocol) is a stateful protocol built on top of tcp u
 * Find version. Test cups-config --version. If this does not work surf to http://localhost:631/printers and see the CUPS version in the title bar of your browser.
 * There are vulnerabilities for it so check your searchsploit.
 
+[Back](#summary)
+
 ## Port 993 - Imap Encrypted
 The default port for the Imap-protocol.
+
+[Back](#summary)
 
 ## Port 995 - POP3 Encrypten
 * Port 995 is the default port for the Post Office Protocol. The protocol is used for clients to connect to the server and download their emails locally. You usually see this port open on mx-servers. Servers that are meant to send and recieve email.
 * Related ports: 110 is the POP3 non-encrypted.
 * 25, 465
 
+[Back](#summary)
+
 ## Port 1025 - NFS or IIS
 Open on windows machine. But nothing has been listening on it.
 
+[Back](#summary)
+
 ## Port 1030/1032/1033/1038
 I think these are used by the RPC within Windows Domains. I have found no use for them so far. But they might indicate that the target is part of a Windows domain. Not sure though.
+
+[Back](#summary)
 
 ## Port 1433 - MsSQL
 Default port for Microsoft SQL.
 ```mssql
 sqsh -S 192.168.1.101 -U sa
 ```
+
+[Back](#summary)
 
 ### Execute Commands
 ```exec
@@ -530,6 +586,8 @@ auxiliary/scanner/oracle/sid_brute
 ## Ports 1748, 1754, 1808, 1809 - Oracle
 These are also ports used by oracle on windows. They run Oracles Intelligent Agent.
 
+[Back](#summary)
+
 ## Port 2049 - NFS
 Network file system This is a service used so that people can access certain parts of a remote filesystem. If this is badly configured it could mean that you grant excessive access to users.
 
@@ -546,12 +604,18 @@ mount -t 192.168.1.109:/ /tmp/NFS
 Now we can go to /tmp/NFS and check out /etc/passwd, and add and remove files.
 This can be used to escalate privileges if it is not correct configured. Check chapter on [Linux Privilege Escalation](https://sushant747.gitbooks.io/total-oscp-guide/privilege_escalation_-_linux.html).
 
+[Back](#summary)
+
 ## Port 2100 - Oracle XML DB
 * There are some exploits for this, so check it out. You can use the default Oracle users to access to it. You can use the normal ftp protocol to access it.
 * Can be accessed through ftp. Some default passwords [here](https://docs.oracle.com/cd/B10501_01/win.920/a95490/username.htm) Name: Version:
 * Default logins: sys:sys scott:tiger
 
+[Back](#summary)
+
 ## Port 3268 - globalcatLdap
+
+[Back](#summary)
 
 ## Port 3306 - MySQL
 Always test the following credential root:root
@@ -568,6 +632,8 @@ Will likely see
 ERROR 1130 (HY000): Host '192.168.0.101' is not allowed to connect to this MySQL server
 ```
 This occurs because mysql is configured so that the root user is only allowed to log in from 127.0.0.1. This is a reasonable security measure put up to protect the database.
+
+[Back](#summary)
 
 ### Configuration Files
 ```
@@ -611,6 +677,8 @@ class JConfig {
 
 ## Port 3339 - Oracle web interface
 
+[Back](#summary)
+
 ## Port 3389 - Remote Desktop Protocol
 Login with rdesktop or xfreerdp 
 ```rdp
@@ -621,24 +689,37 @@ Brute force
 ```bf
 ncrack -vv --user Administrator -P /root/passwords.txt rdp://192.168.1.101
 ```
+
+[Back](#summary)
+
 ### MS12-020
 This is categorized by microsoft as a RCE vulnerability. But there is no POC for it online. You can only DOS a machine using this exploit.
 
 ## Port 4445 - Upnotifyp
-I have not found anything here. Try connecting with netcat and visiting in browser.
+Not much found anything here. Try connecting with netcat and visiting in browser.
+
+[Back](#summary)
 
 ## Port 4555 - RSIP
-I have seen this port being used by Apache James Remote Configuration.
+This port has been used by Apache James Remote Configuration.
 There is an exploit for [version 2.3.2](https://www.exploit-db.com/docs/40123.pdf)
+
+[Back](#summary)
 
 ## Port 47001 - Windows Remote Management Service
 Windows Remote Management Service
 
+[Back](#summary)
+
 ## Port 5357 - WSDAPI
+
+[Back](#summary)
 
 ## Port 5722 - DFSR
 * The Distributed File System Replication (DFSR) service is a state-based, multi-master file replication engine that automatically copies updates to files and folders between computers that are participating in a common replication group. DFSR was added in Windows Server 2003 R2.
 * I am not sure how what can be done with this port. But if it is open it is a sign that the machine in question might be a Domain Controller.
+
+[Back](#summary)
 
 ## Port 5900 - VNC
 * VNC is used to get a screen for a remote host. But some of them have some exploits.
@@ -656,6 +737,8 @@ vncviewer
 ```
 vncviewer 192.168.1.109
 ```
+
+[Back](#summary)
 
 ### Ctrl-alt-del
 * If you are unable to input ctr-alt-del (kali might interpret it as input for kali).
@@ -679,13 +762,19 @@ set rhosts 192.168.1.109
 run
 ```
 
-## Port 8080
+[Back](#summary)
+
+## Port 8080 - HTTP Alternate
 
 ### Tomcat
 Tomcat suffers from default passwords. There is even a module in metasploit that enumerates common tomcat passwords. And another module for exploiting it and giving you a shell.
 
-## Port 9389
+[Back](#summary)
+
+## Port 9389 - Active Directory Web Services
 Active Directory Administrative Center is installed by default on Windows Server 2008 R2 and is available on Windows 7 when you install the Remote Server Administration Tools (RSAT).
+
+[Back](#summary)
 
 ## Cracking Passwords
 * Google it
@@ -694,6 +783,8 @@ Active Directory Administrative Center is installed by default on Windows Server
 ```
 john textfile
 ```
+
+[Back](#summary)
 
 ## Brute-forcing Login
 * Hydra
@@ -710,9 +801,13 @@ hydra -t 1 -L users.txt -P password.lst -vV 10.11.1.# ftp
 [Write-Up](https://www.hackingarticles.in/comprehensive-guide-on-hydra-a-brute-forcing-tool/
 )
 
+[Back](#summary)
+
 ## Resources
 * [Sushant747](https://sushant747.gitbooks.io/total-oscp-guide/list_of_common_ports.html)
 * [0Day](http://www.0daysecurity.com/penetration-testing/enumeration.html)
+
+[Back](#summary)
 
 ## Tips for when you're stuck
 * [Calm down](https://www.youtube.com/watch?v=F28MGLlpP90)
@@ -723,3 +818,5 @@ hydra -t 1 -L users.txt -P password.lst -vV 10.11.1.# ftp
 * Check searchsploit instead of google
 	* Check duckduckgo instead of google
 * Look for nmap scripts to confirm the vulnerability
+
+[Back](#summary)
