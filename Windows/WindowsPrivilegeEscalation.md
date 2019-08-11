@@ -253,14 +253,10 @@ $ net users Administrator
 	net start SSDPSRV
 	net start upnphost
 	```
-	* OR remove the dependency
 		* remove the dependency
 			```
 			> exploit/windows/local/service_permissions
 			```
-			- remove the dependency
-		  * remove
-
 	* Can also use accesschk.exe
 - powershell
 	* check for powershell
