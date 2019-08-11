@@ -3,6 +3,10 @@
 ## MUST RUN: ipconfig/ifconfig && whoami && cat local.txt/proof.txt
 
 ## Summary 
+* [Process](#Process)
+* [Cracking Passwords](#Cracking-Passwords)
+* [Automated Scripts](#Automated-Scripts)
+* [What to do when youre stuck](#What-to-do-when-youre-stuck)
 
 ## Process
 * Upgrade the shell
@@ -68,6 +72,8 @@ fine . -iname '*config'
 mysql -uroot -ppassword -e 'show databases;' //no spaces for password
 ```
 
+[Back](#summary)
+
 ## Cracking Passwords
 * Google it
 * Search on hashkiller.co.uk
@@ -76,10 +82,14 @@ mysql -uroot -ppassword -e 'show databases;' //no spaces for password
 john textfile
 ```
 
+[Back](#summary)
+
 ## Automated Scripts
 * [linuxprivchecker.py](https://github.com/sleventyeleven/linuxprivchecker/blob/master/linuxprivchecker.py)
 * [LinEnum](https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh)
 * [Unix-Privesc-Check](https://github.com/pentestmonkey/unix-privesc-check)
+
+[Back](#summary)
 
 ## What to do when you're stuck
 * [Calm down](https://www.youtube.com/watch?v=F28MGLlpP90)
@@ -87,3 +97,5 @@ john textfile
 * Look for usernames that could have been found
 	* Try to ssh by guessing credentials
 * Google anything running by root
+
+[Back](#summary)
