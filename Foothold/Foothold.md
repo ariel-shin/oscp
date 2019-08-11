@@ -2,8 +2,8 @@
 ### Based on [sushant747 List of common ports](https://sushant747.gitbooks.io/total-oscp-guide/list_of_common_ports.html). A majority of this guide is modified from sushant747.
 
 ## Summary 
-* [Discovering Open Ports](##discovering-open-ports)
-* [File Upload Capability](##file-upload-capability)
+* [Discovering Open Ports](#discovering-open-ports)
+* [File Upload Capability](#file-upload-capability)
 * [Port 21 - FTP](#Port-21---FTP)
 * [Port 22 - SSH](#Port-22---SSH)
 * [Port 23 - Telnet](#Port-23---Telnet)
@@ -30,7 +30,7 @@
 * [Port 1030/1032/1033/1038](#Port-1030103210331038)
 * [Port 1433 - MsSQL](#Port-1433---MsSQL)
 * [Port 1521 - Oracle database](#Port-1521---Oracle-database)
-* [Ports 1748, 1754, 1808, 1809 - Oracle](#Ports-1748,-1754,-1808,-1809---Oracle)
+* [Ports 1748, 1754, 1808, 1809 - Oracle](#ports-1748-1754-1808-1809---oracle)
 * [Port 2049 - NFS](#Port-2049---NFS)
 * [Port 2100 - Oracle XML DB](#Port-2100---Oracle-XML-DB)
 * [Port 3268 - globalcatLdap](#Port-3268---globalcatLdap)

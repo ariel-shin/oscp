@@ -2,7 +2,7 @@
 
 ## Summary 
 * [Web Shell for Windows](#Web-Shell-for-Windows)
-* [File Traversal / Local File Inclusion](#File-Traversal-/-Local-File-Inclusion)
+* [File Traversal / Local File Inclusion](#file-traversal--local-file-inclusion)
 * [Cracking Passwords](#Cracking-Passwords)
 * [RCE to Shell](#RCE-to-Shell)
 * [Useful commands](#Useful-commands)
@@ -12,7 +12,7 @@
 * [Automated Tools](#Automated-Tools)
 * [Cheat Sheets](#Cheat-Sheets)
 * [Links](#Links)
-* [Nothing is working --> SOS](#Nothing-is-working--->-SOS)
+* [Nothing is working --> SOS](#nothing-is-working----sos)
 
 ## MUST RUN: ipconfig/ifconfig && whoami && cat local.txt
 ## MUST RUN: ipconfig/ifconfig && whoami && cat proof.txt
