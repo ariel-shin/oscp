@@ -281,7 +281,7 @@ $ net users Administrator
 	```systemprocesses
 	tasklist /v /fi "username eq system"
 	```
-- Check Weak File Permissions 
+* Check Weak File Permissions 
 ```access
 accesschk.exe -uwcqv "Authenticated Users" * /accepteula
 accesschk.exe -uwcqv "Authenticated Users" C:\*.* /accepteula
