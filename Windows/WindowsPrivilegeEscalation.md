@@ -211,7 +211,19 @@ $ net users Administrator
 	wmic service list brief
 	wmic process
 	```
+
+
+
+
 	* Look for services running as root
+
+
+
+
+
+
+
+
 	```
 	tasklist /SVC
 	```
@@ -226,6 +238,10 @@ $ net users Administrator
 		* [Need to upload nc.exe](https://sushant747.gitbooks.io/total-oscp-guide/privilege_escalation_windows.html)
 		* [EoP 1: Incorrect permissions in services](https://guif.re/windowseop)
 	
+
+
+
+
 
 
 
