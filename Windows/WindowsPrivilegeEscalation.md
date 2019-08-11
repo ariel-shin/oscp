@@ -253,7 +253,10 @@ $ net users Administrator
 	net start SSDPSRV
 	net start upnphost
 	```
-	** OR remove the dependency
+	* OR remove the dependency
+		* remove the dependency
+			- remove the dependency
+		  * remove
 	```
 	> exploit/windows/local/service_permissions
 	```
