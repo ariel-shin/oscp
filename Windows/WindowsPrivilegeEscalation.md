@@ -193,8 +193,10 @@ echo %username%
 getuid
 whoami
 ```
-- net localgroup Administrator(s)
-	* See which users are in the Administrator Group
+- See which users are in the Administrator Group
+```admin
+net localgroup Administrator(s)
+```
 - Information about a user
 ```
 $ net users Administrator
@@ -205,14 +207,15 @@ $ net users Administrator
 	* Look for services and then google
 	```
 	net start
-	wmic service list brief
 	tasklist
+	wmic service list brief
 	wmic process
 	```
 	* Look for services running as root
 	```
 	tasklist /SVC
 	```
+	
 		* Running processes to started services
 		* Looking for upnphost
 		* [Fuzzy Security Write-up - nc.exe](http://www.fuzzysecurity.com/tutorials/16.html)
