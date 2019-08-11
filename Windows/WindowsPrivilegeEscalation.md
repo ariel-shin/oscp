@@ -10,7 +10,7 @@
 * [Process](#Process)
 * [Bypassing AV](#Bypassing-AV)
 * [Automated Tools](#Automated-Tools)
-* [Cheat Sheets](#Cheat-Sheets)
+* [Resources](#Resources)
 * [Nothing is working --> SOS](#nothing-is-working----sos)
 
 ## MUST RUN: ipconfig/ifconfig && whoami && cat local.txt
