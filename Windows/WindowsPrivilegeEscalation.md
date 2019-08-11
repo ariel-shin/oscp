@@ -215,20 +215,12 @@ $ net users Administrator
 	```
 	tasklist /SVC
 	```
-	```
-	```
 
-		* [Fuzzy Security Write-up - nc.exe](http://www.fuzzysecurity.com/tutorials/16.html)
-		* [Pentest.blog - Add user](https://pentest.blog/windows-privilege-escalation-methods-for-pentesters/)
-		* [Need to upload nc.exe](https://sushant747.gitbooks.io/total-oscp-guide/privilege_escalation_windows.html)
-		* [EoP 1: Incorrect permissions in services](https://guif.re/windowseop)
+	* [Fuzzy Security Write-up - nc.exe](http://www.fuzzysecurity.com/tutorials/16.html)
+	* [Pentest.blog - Add user](https://pentest.blog/windows-privilege-escalation-methods-for-pentesters/)
+	* [Need to upload nc.exe](https://sushant747.gitbooks.io/total-oscp-guide/privilege_escalation_windows.html)
+	* [EoP 1: Incorrect permissions in services](https://guif.re/windowseop)
 	
-
-
-
-
-
-
 
 	* Print affected services
 	```
