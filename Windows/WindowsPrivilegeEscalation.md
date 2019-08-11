@@ -1,7 +1,6 @@
 # ariel-shin Windows - Privilege Escalation
 
-## MUST RUN: ipconfig/ifconfig && whoami && cat local.txt
-## MUST RUN: ipconfig/ifconfig && whoami && cat proof.txt
+## MUST RUN: ipconfig/ifconfig && whoami && cat local.txt/proof.txt
 
 ## Summary 
 * [Web Shell for Windows](#Web-Shell-for-Windows)
