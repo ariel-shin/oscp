@@ -47,6 +47,9 @@
 * [Port 9389](#Port-9389)
 * [Tips for when you're stuck](#Tips-for-when-you're-stuck)
 
+## MUST RUN: ipconfig/ifconfig && whoami && cat local.txt
+## MUST RUN: ipconfig/ifconfig && whoami && cat proof.txt
+
 ## Discovering Open Ports 
 * Nmap 
 ```nmap
@@ -341,6 +344,7 @@ TO DO: FINISH THIS
 ```nbtscan
 nbtscan -r 192.168.1.1/24
 ```
+* [Netbios Write-up](https://null-byte.wonderhowto.com/how-to/enumerate-netbios-shares-with-nbtscan-nmap-scripting-engine-0193957/)
 
 ## Port 143/993 - IMAP
 * IMAP lets you access email stored on that server. So imagine that you are on a network at work, the emails you recieve is not stored on your computer but on a specific mail-server. So every time you look in your inbox your email-client (like outlook) fetches the emails from the mail-server using imap.
@@ -703,6 +707,8 @@ Brute force with a list of passwords
 cp /usr/share/john/password.lst password.lst
 hydra -t 1 -L users.txt -P password.lst -vV 10.11.1.# ftp
 ```
+[Write-Up](https://www.hackingarticles.in/comprehensive-guide-on-hydra-a-brute-forcing-tool/
+)
 
 ## Tips for when you're stuck
 * Revert the box 

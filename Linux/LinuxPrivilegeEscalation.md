@@ -3,11 +3,16 @@
 ## Summary 
 
 ## MUST RUN: ipconfig/ifconfig && whoami && cat local.txt
+## MUST RUN: ipconfig/ifconfig && whoami && cat proof.txt
 
 ## Process
 * Upgrade the shell
 ```
 python -c ‘import pty; pty.spawn(“/bin/sh”)’
+```
+* We have credentials
+```
+sudo su
 ```
 * What's the OS? Version? Architecture? 
 ```os
@@ -80,5 +85,6 @@ john textfile
 
 
 ## Automated Scripts
+* [linuxprivchecker.py](https://github.com/sleventyeleven/linuxprivchecker/blob/master/linuxprivchecker.py)
 * [LinEnum](https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh)
 * [Unix-Privesc-Check](https://github.com/pentestmonkey/unix-privesc-check)

