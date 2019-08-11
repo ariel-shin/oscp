@@ -282,11 +282,11 @@ $ net users Administrator
 	tasklist /v /fi "username eq system"
 	```
 - Check Weak File Permissions 
-* [More commands](http://www.exumbraops.com/penetration-testing-102-windows-privilege-escalation-cheatsheet)
-```
+```access
 accesschk.exe -uwcqv "Authenticated Users" * /accepteula
 accesschk.exe -uwcqv "Authenticated Users" C:\*.* /accepteula
 ```
+	* [More commands](http://www.exumbraops.com/penetration-testing-102-windows-privilege-escalation-cheatsheet)
 - [Unquoted Service Path](https://pentestlab.blog/2017/03/09/unquoted-service-path/)
 	```unquoted
 	wmic service get name,displayname,pathname,startmode |findstr /i “auto” |findstr /i /v “c:\windows\\” |findstr /i /v “””
