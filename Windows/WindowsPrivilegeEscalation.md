@@ -211,28 +211,13 @@ $ net users Administrator
 	wmic service list brief
 	wmic process
 	```
-
-
-
-
-	* Look for services running as root
-
-
-
-
-
-
-
-
+	* Look for services running as root (e.g) upnphost
 	```
 	tasklist /SVC
 	```
+	```
+	```
 
-
-
-
-		* Running processes to started services
-		* Looking for upnphost
 		* [Fuzzy Security Write-up - nc.exe](http://www.fuzzysecurity.com/tutorials/16.html)
 		* [Pentest.blog - Add user](https://pentest.blog/windows-privilege-escalation-methods-for-pentesters/)
 		* [Need to upload nc.exe](https://sushant747.gitbooks.io/total-oscp-guide/privilege_escalation_windows.html)
