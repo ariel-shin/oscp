@@ -359,22 +359,19 @@ accesschk.exe -uwcqv "Authenticated Users" C:\*.* /accepteula
 - [Services only available from loopback](https://guif.re/windowseop)
 - [Vulnerable Drivers](https://guif.re/windowseop)
 - [MORE PAYLOADS](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md)
-
-CHECKLIST (https://github.com/netbiosX/Checklists/blob/master/Windows-Privilege-Escalation.md)
-
 - Network Information
-```
-$ ipconfig /all & route print & arp -a
-```
+	```
+	$ ipconfig /all & route print & arp -a
+	```
 - List Open Connections
-```netstat
-$ netstat -aton
-```
+	```netstat
+	$ netstat -aton
+	```
 - Fireswall Information
-```firewall
-$ netsh firewall show state
-$ netsh firewall show config
-```
+	```firewall
+	$ netsh firewall show state
+	$ netsh firewall show config
+	```
 
 ## Bypassing AV
 * Textbook
@@ -399,7 +396,8 @@ $ wine hyperion.exe ../backdoor.exe ../backdoor_mutation.exe
 * [Windows Privesc Check](https://github.com/pentestmonkey/windows-privesc-check)
 * [Sherlock](https://github.com/rasta-mouse/Sherlock)
 
-## Cheat Sheets
+## Resources
+* CHECKLIST (https://github.com/netbiosX/Checklists/blob/master/Windows-Privilege-Escalation.md)
 * [Reverse Shell](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
 )
 * [Spreadsheet with Resources](https://docs.google.com/spreadsheets/d/12bT8APhWsL-P8mBtWCYu4MLftwG1cPmIL25AEBtXDno/edit#gid=2075148101)
