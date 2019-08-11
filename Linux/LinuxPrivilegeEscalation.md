@@ -1,9 +1,9 @@
 # ariel-shin Linux - Privilege Escalation 
 
-## Summary 
-
 ## MUST RUN: ipconfig/ifconfig && whoami && cat local.txt
 ## MUST RUN: ipconfig/ifconfig && whoami && cat proof.txt
+
+## Summary 
 
 ## Process
 * Upgrade the shell

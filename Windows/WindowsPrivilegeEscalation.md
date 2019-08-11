@@ -1,5 +1,8 @@
 # ariel-shin Windows - Privilege Escalation
 
+## MUST RUN: ipconfig/ifconfig && whoami && cat local.txt
+## MUST RUN: ipconfig/ifconfig && whoami && cat proof.txt
+
 ## Summary 
 * [Web Shell for Windows](#Web-Shell-for-Windows)
 * [File Traversal / Local File Inclusion](#file-traversal--local-file-inclusion)
@@ -12,9 +15,6 @@
 * [Automated Tools](#Automated-Tools)
 * [Resources](#Resources)
 * [Nothing is working --> SOS](#nothing-is-working----sos)
-
-## MUST RUN: ipconfig/ifconfig && whoami && cat local.txt
-## MUST RUN: ipconfig/ifconfig && whoami && cat proof.txt
 
 ## Web Shell for Windows 
 PHP Web Shell
