@@ -77,14 +77,14 @@ mysql -uroot -ppassword -e 'show databases;' //no spaces for password
 john textfile
 ```
 
-## What to do when you're stuck
-* Take a breath 
-* Look for usernames that could have been found
-	* Try to ssh by guessing credentials
-* Google anything running by root
-
-
 ## Automated Scripts
 * [linuxprivchecker.py](https://github.com/sleventyeleven/linuxprivchecker/blob/master/linuxprivchecker.py)
 * [LinEnum](https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh)
 * [Unix-Privesc-Check](https://github.com/pentestmonkey/unix-privesc-check)
+
+## What to do when you're stuck
+* [Calm down](https://www.youtube.com/watch?v=F28MGLlpP90)
+* Take a breath 
+* Look for usernames that could have been found
+	* Try to ssh by guessing credentials
+* Google anything running by root

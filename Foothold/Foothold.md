@@ -710,7 +710,12 @@ hydra -t 1 -L users.txt -P password.lst -vV 10.11.1.# ftp
 [Write-Up](https://www.hackingarticles.in/comprehensive-guide-on-hydra-a-brute-forcing-tool/
 )
 
+## Resources
+* [Sushant747](https://sushant747.gitbooks.io/total-oscp-guide/list_of_common_ports.html)
+* [0Day](http://www.0daysecurity.com/penetration-testing/enumeration.html)
+
 ## Tips for when you're stuck
+* [Calm down](https://www.youtube.com/watch?v=F28MGLlpP90)
 * Revert the box 
 * Take a breath, look at the nmap scan and start over 
 * Fix the exploit
@@ -718,7 +723,3 @@ hydra -t 1 -L users.txt -P password.lst -vV 10.11.1.# ftp
 * Check searchsploit instead of google
 	* Check duckduckgo instead of google
 * Look for nmap scripts to confirm the vulnerability
-
-## Resources
-* [Sushant747](https://sushant747.gitbooks.io/total-oscp-guide/list_of_common_ports.html)
-* [0Day](http://www.0daysecurity.com/penetration-testing/enumeration.html)

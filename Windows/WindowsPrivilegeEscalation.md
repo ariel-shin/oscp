@@ -413,5 +413,10 @@ $ wine hyperion.exe ../backdoor.exe ../backdoor_mutation.exe
 * [Spreadsheet with Resources](https://docs.google.com/spreadsheets/d/12bT8APhWsL-P8mBtWCYu4MLftwG1cPmIL25AEBtXDno/edit#gid=2075148101)
 
 ## Nothing is working --> SOS
+* [Calm down](https://www.youtube.com/watch?v=F28MGLlpP90)
 * Walk through this [tutorial](https://guif.re/windowseop)
 * Check through this [list of tutorials](https://backdoorshell.gitbooks.io/oscp-useful-links/content/windows-privilege-escalation.html)
+* Look for usernames that could have been found
+	* Try to add rdp access
+	* RDP by guessing credentials
+* Google anything running as system 
