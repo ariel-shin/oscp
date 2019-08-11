@@ -2,10 +2,16 @@
 
 ## Summary 
 
+## MUST RUN: ipconfig/ifconfig && whoami && cat local.txt
+
 ## Process
+* Upgrade the shell
+```
+python -c ‘import pty; pty.spawn(“/bin/sh”)’
+```
 * What's the OS? Version? Architecture? 
 ```os
-cat etc/*-release
+cat /etc/*-release
 uname -i
 lsb_release -a #Debian Based OS
 ```
@@ -19,7 +25,10 @@ pwd
 * Bash History 
 ```
 history
+cat .bash_history
 ```
+* Google anything that looks weird
+* See if root is running anything that showed up in the history
 
 * Who uses the box? What users?
 ```passwd
@@ -27,7 +36,7 @@ cat /etc/passwd
 grep -vE "nologin | false" /etc/passwd
 ```
 
-* Can we access /etc/shadow
+* Can we access /etc/shadow?
 ```
 cat /etc/shadow
 ```
@@ -54,6 +63,21 @@ fine . -iname '*config'
 ```mysql
 mysql -uroot -ppassword -e 'show databases;' //no spaces for password
 ```
+
+## Cracking Passwords
+* Google it
+* Search on hashkiller.co.uk
+* John The Ripper
+```
+john textfile
+```
+
+## What to do when you're stuck
+* Take a breath 
+* Look for usernames that could have been found
+	* Try to ssh by guessing credentials
+* Google anything running by root
+
 
 ## Automated Scripts
 * [LinEnum](https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh)

