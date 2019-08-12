@@ -7,6 +7,7 @@
 * [Cracking Passwords](#Cracking-Passwords)
 * [Automated Scripts](#Automated-Scripts)
 * [What to do when youre stuck](#What-to-do-when-youre-stuck)
+* [Resources](#Resources)
 
 ## Process
 * Upgrade the shell
@@ -88,6 +89,11 @@ john textfile
 * [linuxprivchecker.py](https://github.com/sleventyeleven/linuxprivchecker/blob/master/linuxprivchecker.py)
 * [LinEnum](https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh)
 * [Unix-Privesc-Check](https://github.com/pentestmonkey/unix-privesc-check)
+
+[Back](#summary)
+
+## Resources
+* [g0tmilk](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
 
 [Back](#summary)
 
