@@ -211,6 +211,31 @@ net localgroup Administrator(s)
 ```
 $ net users Administrator
 ```
+- Which users are on the systems
+	* Command Prompt
+	```
+	net users
+	dir /b /ad "C:\Users\"
+	dir /b /ad "C:\Documents and Settings\" # Windows XP and below
+	```
+	* Powershell
+	```
+	Get-LocalUser | ft Name,Enabled,LastLogon
+	Get-ChildItem C:\Users -Force | select Name
+	```
+- Check who else is logged in
+```
+qwinsta
+```
+- Check User Autologon
+	* Command Prompt
+	```
+	reg query "HKLM\SOFTWARE\Microsoft\Windows NT\Currentversion\Winlogon" 2>nul | findstr "DefaultUserName DefaultDomainName DefaultPassword"
+	```
+	* Powershell
+	```
+	Get-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WinLogon' | select "Default*"
+	```
 - List running services
 	* A service running as Administrator/SYSTEM with incorrect file permissions might allow EOP. 
 	* Interested in services wehre permissions are: ***BUILTIN\USERS*** with ***(F)*** or ***(C)*** or ***(M)***
@@ -419,6 +444,7 @@ $ wine hyperion.exe ../backdoor.exe ../backdoor_mutation.exe
 * [Reverse Shell](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
 )
 * [Spreadsheet with Resources](https://docs.google.com/spreadsheets/d/12bT8APhWsL-P8mBtWCYu4MLftwG1cPmIL25AEBtXDno/edit#gid=2075148101)
+* [Walkthrough](https://www.absolomb.com/2018-01-26-Windows-Privilege-Escalation-Guide/)
 
 [Back](#summary)
 
