@@ -68,6 +68,7 @@ unicornscan IP
 Check for UDP 
 ```uniudp
 unicornscan -pa -mU 10.11.1.226
+nmap -sU -T4 10.11.1.# 
 ```
 * masscan 
 Checks for TCP and UDP
@@ -78,6 +79,8 @@ masscan -p1-65535,U:1-65535 10.10.10.63 --rate=1000 -e tun0
 Find common vulnerabilities
 ```nmapscripts
 nmap -T4 -p445 --script vuln 10.10.10.# -oN outputFile.txt
+nmap -T4 -p445 --script "*vuln*" 10.10.10.# -oN outputFile2.txt
+nmap -T4 -p445 --script "ftp*" 10.10.10.# -oN outputFile3.txt
 ```
 
 [Back](#summary)
@@ -364,6 +367,7 @@ metasploit: use exploit/windows/smb/psexec
 ### Scanning with nmap 
 ```nmap139445
 nmap -p 139,445 192.168.1.1/24 --script smb-enum-shares.nse smb-os-discovery.nse
+nmap -p 139,445 --script "smb-vuln*" 10.11.11.#
 ```
 TO DO: FINISH THIS
 
@@ -391,12 +395,19 @@ SNMP is used to manage devices on a network. It has some funny terminology. For 
 
 You can have read-only access to the snmp.Often just with the community string public.
 
+snmp-check
+```
+snmp-check -c public  10.11.1.13 
+*also check private, public, manager 
+```
+
 Common community strings
 ```common
 public
 private
 community
 ```
+
 * [Longer list of common community strings](https://github.com/danielmiessler/SecLists/blob/master/Miscellaneous/wordlist-common-snmp-community-strings.txt)
 
 ### MIB - Management Information Base
@@ -498,6 +509,10 @@ use auxiliary/scanner/ssl/openssl_heartbleed
 	* Use Cewl
 * WordPress
 	* WPScan
+	* brute force a user
+	```
+	wpscan --url 10.11.1.# --wordlist /usr/share/wordlists/rockyou.txt --username admin 
+	```
 
 [Back](#summary)
 
@@ -800,6 +815,7 @@ hydra -t 1 -L users.txt -P password.lst -vV 10.11.1.# ftp
 ## Resources
 * [Sushant747](https://sushant747.gitbooks.io/total-oscp-guide/list_of_common_ports.html)
 * [0Day](http://www.0daysecurity.com/penetration-testing/enumeration.html)
+* [Commands to walkthrough](https://github.com/wwong99/pentest-notes/blob/master/oscp_resources/OSCP-Survival-Guide.md#file-inclusion-vulnerabilities)
 
 [Back](#summary)
 

