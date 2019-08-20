@@ -221,11 +221,12 @@ Ftp-server but it uses UDP
 
 ## Port 80 - HTTP
 * nikto -h url -o niktodp80.txt
-* gobuster -u url -w wordlist.txt -o gobustedp80
+* gobuster -u url -w wordlist.txt -e -o gobustedp80.txt
 	* Wordlists 
 		* Dirb - /usr/share/dirb/wordlists
 		* wfuzz - /usr/share/wfuzz/wordlists
 		* SecList - /usr/share/SecLists
+	* gobuster -u url -w wordlist.txt -x php,xml,html -e -o gobustedp80.txt
 * Look for hidden directories with cewl and guessing words on the website
 	* e.g. ask jeeves --> /jeeves or /askjeeves
 * Look at robots.txt
