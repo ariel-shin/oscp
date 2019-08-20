@@ -10,6 +10,8 @@
 * [Resources](#Resources)
 
 ## Process
+* Reverse Shell
+	* Check Different Ports, e.g. 80, 443
 * Upgrade the shell
 ```
 python -c ‘import pty; pty.spawn(“/bin/sh”)’

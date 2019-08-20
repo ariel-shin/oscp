@@ -27,6 +27,9 @@ PHP Web Shell
 ```
 - Go to http://victimsite.com/test.php?cmd=dir for command execution 
 
+- Reverse Shell
+	* Check Different Ports, e.g. 80, 443
+
 [Back](#summary)
 
 ## File Traversal / Local File Inclusion
