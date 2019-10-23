@@ -226,7 +226,7 @@ Ftp-server but it uses UDP
 		* Dirb - /usr/share/dirb/wordlists
 		* wfuzz - /usr/share/wfuzz/wordlists
 		* SecList - /usr/share/SecLists
-	* gobuster -u url -w wordlist.txt -x php,xml,html -e -o gobustedp80.txt
+	* gobuster -u url -w wordlist.txt -x txt,php,xml,html -e -o gobustedp80.txt
 * Look for hidden directories with cewl and guessing words on the website
 	* e.g. ask jeeves --> /jeeves or /askjeeves
 * Look at robots.txt
@@ -491,6 +491,7 @@ use auxiliary/scanner/ssl/openssl_heartbleed
 		* Dirb - /usr/share/dirb/wordlists
 		* wfuzz - /usr/share/wfuzz/wordlists
 		* SecList - /usr/share/SecLists
+	* gobuster -u url -w wordlist.txt -x txt,php,xml,html -e -o gobustedp80.txt
 * Look for hidden directories with cewl and guessing words on the website
 	* e.g. ask jeeves --> /jeeves or /askjeeves
 * Look at robots.txt
