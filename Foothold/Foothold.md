@@ -47,6 +47,10 @@
 * [Port 5900 - VNC](#Port-5900---VNC)
 * [Port 8080](#Port-8080--HTTP-Alternate)
 * [Port 9389](#Port-9389--Active-Directory-Web-Services)
+* [Other Port](#Other-Ports)
+* [Cracking Passwords](#Cracking-Passwords)
+* [Brute-forcing Login](#Brute-forcing-Login)
+* [Resources](#Resources)
 * [Tips for when you're stuck](#tips-for-when-youre-stuck)
 
 ## Discovering Open Ports 
@@ -784,6 +788,19 @@ Tomcat suffers from default passwords. There is even a module in metasploit that
 
 ## Port 9389 - Active Directory Web Services
 Active Directory Administrative Center is installed by default on Windows Server 2008 R2 and is available on Windows 7 when you install the Remote Server Administration Tools (RSAT).
+
+[Back](#summary)
+
+## Other Ports
+* Netcat
+```
+nc IP port
+```
+* telnet
+```
+telnet IP port
+```
+* Google it
 
 [Back](#summary)
 
