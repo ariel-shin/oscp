@@ -241,6 +241,7 @@ Ftp-server but it uses UDP
 	* Google it 
 	* Look for usernames
 	* Guess passwords
+		* root, toor, password, admin, administrator
 		* admin:""
 		* admin:admin
 		* admin:password
@@ -507,6 +508,7 @@ use auxiliary/scanner/ssl/openssl_heartbleed
 	* Google it 
 	* Look for usernames
 	* Guess passwords
+		* root, toor, password, admin, administrator
 		* admin:""
 		* admin:admin
 		* admin:password
