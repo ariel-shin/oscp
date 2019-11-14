@@ -11,7 +11,7 @@
 * [Port 23 - Telnet](#Port-23---Telnet)
 * [Port 25 - SMTP](#Port-25---SMTP)
 * [Port 69 - TFTP](#Port-69---TFTP)
-* [Port 80 - HTTP](#Port-80---HTTP)
+* [Port 80/443 - HTTP/HTTPS](##-Port-80/443--HTTP/HTTPS)
 * [Port 88 - Kerberos](#Port-88---Kerberos)
 * [Port 110 - POP3](#Port-110---POP3)
 * [Port 111 - Rpcbind](#Port-111---Rpcbind)
@@ -22,7 +22,6 @@
 * [Port 161 and 162 - SNMP](#Port-161-and-162---SNMP)
 * [Port 199 - Smux](#Port-199---Smux)
 * [Port 389/636 - Ldap](#Port-389636---Ldap)
-* [Port 443 - HTTPS](#Port-443---HTTPS)
 * [Port 554 - RTSP](#Port-554---RTSP)
 * [Port 587 - Submission](#Port-587---Submission)
 * [Port 631 - Cups](#Port-631---Cups)
@@ -223,14 +222,32 @@ Ftp-server but it uses UDP
 
 [Back](#summary)
 
-## Port 80 - HTTP
+## Port 80/443 - HTTP/HTTPS
+
+## Port 443 - HTTPS
+
+### Heartbleed
+
+#### nmap 
+```heartbleed
+nmap -sV --script=ssl-heartbleed 192.168.101.8
+```
+
+#### metasploit
+```
+use auxiliary/scanner/ssl/openssl_heartbleed
+```
+
+### Web App Methodology
 * nikto -h url -o niktodp80.txt
-* gobuster -u url -w wordlist.txt -e -o gobustedp80.txt
+* gobuster -u url -w wordlist.txt -o gobustedp80
 	* Wordlists 
 		* Dirb - /usr/share/dirb/wordlists
 		* wfuzz - /usr/share/wfuzz/wordlists
 		* SecList - /usr/share/SecLists
 	* gobuster -u url -w wordlist.txt -x txt,php,xml,html -e -o gobustedp80.txt
+	* go deeper one level or use dirb
+* Check github for CMS etc. 
 * Look for hidden directories with cewl and guessing words on the website
 	* e.g. ask jeeves --> /jeeves or /askjeeves
 * Look at robots.txt
@@ -252,8 +269,10 @@ Ftp-server but it uses UDP
 	* Use Cewl
 * WordPress
 	* WPScan
-	* Appearance --> Editor --> edit index.php with reverse shell 
-
+	* brute force a user
+	```
+	wpscan --url 10.11.1.# --wordlist /usr/share/wordlists/rockyou.txt --username admin 
+	```
 [Back](#summary)
 
 ## Port 88 - Kerberos
@@ -473,56 +492,6 @@ ldapsearch -h 192.168.1.101 -p 389 -x -b "dc=mywebsite,dc=com"
 When a client connects to the Ldap directory it can use it to query data, or add or remove.
 Port 636 is used for SSL.
 There are also metasploit modules for Windows 2000 SP4 and Windows Xp SP0/SP1
-
-[Back](#summary)
-
-## Port 443 - HTTPS
-
-### Heartbleed
-
-#### nmap 
-```heartbleed
-nmap -sV --script=ssl-heartbleed 192.168.101.8
-```
-
-#### metasploit
-```
-use auxiliary/scanner/ssl/openssl_heartbleed
-```
-
-### Web App Methodology
-* nikto -h url -o niktodp80.txt
-* gobuster -u url -w wordlist.txt -o gobustedp80
-	* Wordlists 
-		* Dirb - /usr/share/dirb/wordlists
-		* wfuzz - /usr/share/wfuzz/wordlists
-		* SecList - /usr/share/SecLists
-	* gobuster -u url -w wordlist.txt -x txt,php,xml,html -e -o gobustedp80.txt
-* Look for hidden directories with cewl and guessing words on the website
-	* e.g. ask jeeves --> /jeeves or /askjeeves
-* Look at robots.txt
-* Look for readme.txt
-* Look at source code for comments on what service is running or sensitive information
-* Google the page 
-* Login Console
-	* Google it 
-	* Look for usernames
-	* Guess passwords
-		* root, toor, password, admin, administrator
-		* admin:""
-		* admin:admin
-		* admin:password
-		* root:""
-		* root:root
-		* root:toor
-		* root:password
-	* Use Cewl
-* WordPress
-	* WPScan
-	* brute force a user
-	```
-	wpscan --url 10.11.1.# --wordlist /usr/share/wordlists/rockyou.txt --username admin 
-	```
 
 [Back](#summary)
 
