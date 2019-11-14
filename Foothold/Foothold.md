@@ -234,6 +234,7 @@ Ftp-server but it uses UDP
 * Look for hidden directories with cewl and guessing words on the website
 	* e.g. ask jeeves --> /jeeves or /askjeeves
 * Look at robots.txt
+* Look for readme.txt
 * Look at source code for comments on what service is running or sensitive information
 * Google the page 
 * Login Console
@@ -499,6 +500,7 @@ use auxiliary/scanner/ssl/openssl_heartbleed
 * Look for hidden directories with cewl and guessing words on the website
 	* e.g. ask jeeves --> /jeeves or /askjeeves
 * Look at robots.txt
+* Look for readme.txt
 * Look at source code for comments on what service is running or sensitive information
 * Google the page 
 * Login Console
