@@ -11,7 +11,7 @@
 * [Port 23 - Telnet](#Port-23---Telnet)
 * [Port 25 - SMTP](#Port-25---SMTP)
 * [Port 69 - TFTP](#Port-69---TFTP)
-* [Port 80/443 - HTTP/HTTPS](##-Port-80/443--HTTP/HTTPS)
+* [Port 80/443 - HTTP/HTTPS](##Port-80/443--HTTP/HTTPS)
 * [Port 88 - Kerberos](#Port-88---Kerberos)
 * [Port 110 - POP3](#Port-110---POP3)
 * [Port 111 - Rpcbind](#Port-111---Rpcbind)
