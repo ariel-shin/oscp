@@ -4,6 +4,7 @@
 
 ## Summary 
 * [Process](#Process)
+* [Compiling Exploits](Compiling-Exploits)
 * [Cracking Passwords](#Cracking-Passwords)
 * [Automated Scripts](#Automated-Scripts)
 * [What to do when youre stuck](#What-to-do-when-youre-stuck)
@@ -92,6 +93,26 @@ find / -perm -g=s -o -perm -4000 ! -type l -maxdepth 3 -exec ls -ld {} \; 2>/dev
 	chmod 4755 /bin/dash
 	```
 
+* Discover tools
+```
+find / -name wget
+find / -name nc<em>
+find / -name netcat</em>
+find / -name tftp*
+find / -name ftp
+```
+[Back](#summary)
+
+## Compiling Exploits
+* gcc
+``` 
+gcc exploit.c -o exploit
+./exploit
+```
+* mingw32
+``` 
+TO DO
+```
 [Back](#summary)
 
 ## Cracking Passwords
