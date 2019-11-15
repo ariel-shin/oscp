@@ -11,7 +11,7 @@
 * [Port 23 - Telnet](#Port-23---Telnet)
 * [Port 25 - SMTP](#Port-25---SMTP)
 * [Port 69 - TFTP](#Port-69---TFTP)
-* [Port 80/443 - HTTP/HTTPS](##Port-80/443--HTTP/HTTPS)
+* [Port 80/443 - HTTP/HTTPS](##Port-80/443---HTTP/HTTPS)
 * [Port 88 - Kerberos](#Port-88---Kerberos)
 * [Port 110 - POP3](#Port-110---POP3)
 * [Port 111 - Rpcbind](#Port-111---Rpcbind)
@@ -244,20 +244,6 @@ Ftp-server but it uses UDP
 
 ## Port 80/443 - HTTP/HTTPS
 
-## Port 443 - HTTPS
-
-### Heartbleed
-
-#### nmap 
-```heartbleed
-nmap -sV --script=ssl-heartbleed 192.168.101.8
-```
-
-#### metasploit
-```
-use auxiliary/scanner/ssl/openssl_heartbleed
-```
-
 ### Web App Methodology
 * nikto -h url -o niktodp80.txt
 * gobuster -u url -w wordlist.txt -o gobustedp80
@@ -293,6 +279,18 @@ use auxiliary/scanner/ssl/openssl_heartbleed
 	```
 	wpscan --url 10.11.1.# --wordlist /usr/share/wordlists/rockyou.txt --username admin 
 	```
+
+### Heartbleed
+
+#### nmap 
+```heartbleed
+nmap -sV --script=ssl-heartbleed 192.168.101.8
+```
+
+#### metasploit
+```
+use auxiliary/scanner/ssl/openssl_heartbleed
+```
 [Back](#summary)
 
 ## Port 88 - Kerberos
