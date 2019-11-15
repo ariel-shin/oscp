@@ -130,6 +130,7 @@ TODO: USAGE
 		```
 		Go to http://victimsite.com/test.php?cmd=dir for command execution 
 
+	* [Other languages/compabibility](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet)
 * Hosting a shell
 	* Python Web Server
 	```
