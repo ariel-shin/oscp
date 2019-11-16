@@ -93,7 +93,7 @@ nmap -T4 -p445 --script "ftp*" 10.10.10.# -oN outputFile3.txt
 ### Tools
 * davtest
 ```davtest
-TODO: USAGE
+davtest -url http://localhost/davdir
 ```
 
 * cadavaer
