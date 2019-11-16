@@ -803,6 +803,7 @@ telnet IP port
 hash-identifier [HASH]
 ```
 * Confirm the format (e.g if MD5, check enough characters)
+	* MD5 of "admin": 21232f297a57a5a743894a0e4a801fc3 
 	* [md5 decrypt](https://www.md5online.org/md5-decrypt.html)
 	* remove first character, last character, try to fit it in
 * John The Ripper
