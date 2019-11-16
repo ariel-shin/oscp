@@ -22,7 +22,7 @@
 * [Port 161 and 162 - SNMP](#Port-161-and-162---SNMP)
 * [Port 199 - Smux](#Port-199---Smux)
 * [Port 389/636 - Ldap](#Port-389636---Ldap)
-* [Port 445 - SMB](#Port-445-SMB)
+* [Port 445 - SMB](#Port-445---SMB)
 * [Port 554 - RTSP](#Port-554---RTSP)
 * [Port 587 - Submission](#Port-587---Submission)
 * [Port 631 - Cups](#Port-631---Cups)
