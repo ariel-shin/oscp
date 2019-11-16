@@ -97,9 +97,16 @@ davtest -url http://localhost/davdir
 ```
 
 * cadavaer
+Example with webdav xampp default creds
 ```cadaver
-TODO: USAGE
+cadaver http://<REMOTE HOST>/webdav/
+user: wampp
+pass:xampp
+
+put /tmp/helloworld.txt
 ```
+load URL, http://<REMOTE HOST>/webdav/helloworld.txr
+
 
 ### LFI
 * End Files with %00 (Null Byte)
