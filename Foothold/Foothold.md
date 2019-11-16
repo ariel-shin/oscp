@@ -798,6 +798,10 @@ telnet IP port
 ## Cracking Passwords
 * Google it
 * Search on hashkiller.co.uk
+* Confirm type of hash
+```
+hash-identifier [HASH]
+```
 * John The Ripper
 ```
 john textfile
