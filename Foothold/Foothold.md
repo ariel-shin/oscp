@@ -101,7 +101,7 @@ Example with webdav xampp default creds
 ```cadaver
 cadaver http://<REMOTE HOST>/webdav/
 user: wampp
-pass:xampp
+pass: xampp
 
 put /tmp/helloworld.txt
 ```
@@ -427,7 +427,7 @@ metasploit: use exploit/windows/smb/psexec
 
 ### Scanning with nmap 
 ```nmap139445
-nmap -p 139,445 192.168.1.1/24 --script smb-enum-shares.nse smb-os-discovery.nse
+nmap -p 139,445 192.168.1.1/24 --script smb-enum-shares.nse, smb-os-discovery.nse
 nmap -p 139,445 --script "smb-vuln*" 10.11.11.#
 ```
 TO DO: FINISH THIS
