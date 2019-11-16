@@ -246,13 +246,23 @@ Ftp-server but it uses UDP
 
 ### Web App Methodology
 * nikto -h url -o niktodp80.txt
-* gobuster -u url -w wordlist.txt -o gobustedp80
+* gobuster
+	```
+	gobuster -u url -w wordlist.txt -o gobustedp80
+	```
 	* Wordlists 
 		* Dirb - /usr/share/dirb/wordlists
 		* wfuzz - /usr/share/wfuzz/wordlists
 		* SecList - /usr/share/SecLists
 	* gobuster -u url -w wordlist.txt -x txt,php,xml,html -e -o gobustedp80.txt
 	* go deeper one level or use dirb
+* dirb 
+	* automatically does the recrusive search 
+	```
+	dirb http://site.com -w wordlist -o dirb.txt
+	```
+	* -N: ignore response code
+	* -r: don't search recursively
 * Check github for CMS etc. 
 * Look for hidden directories with cewl and guessing words on the website
 	* e.g. ask jeeves --> /jeeves or /askjeeves
