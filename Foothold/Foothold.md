@@ -802,6 +802,9 @@ telnet IP port
 ```
 hash-identifier [HASH]
 ```
+* Confirm the format (e.g if MD5, check enough characters)
+	* [md5 decrypt](https://www.md5online.org/md5-decrypt.html)
+	* remove first character, last character, try to fit it in
 * John The Ripper
 ```
 john textfile
