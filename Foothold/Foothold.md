@@ -259,7 +259,7 @@ Ftp-server but it uses UDP
 * dirb 
 	* automatically does the recrusive search 
 	```
-	dirb http://site.com -w wordlist -o dirb.txt
+	dirb http://site.com wordlist -o dirb.txt
 	```
 	* -N: ignore response code
 	* -r: don't search recursively
