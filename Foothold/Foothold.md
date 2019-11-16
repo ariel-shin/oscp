@@ -22,6 +22,7 @@
 * [Port 161 and 162 - SNMP](#Port-161-and-162---SNMP)
 * [Port 199 - Smux](#Port-199---Smux)
 * [Port 389/636 - Ldap](#Port-389636---Ldap)
+* [Port 445 - SMB](#Port-445-SMB)
 * [Port 554 - RTSP](#Port-554---RTSP)
 * [Port 587 - Submission](#Port-587---Submission)
 * [Port 631 - Cups](#Port-631---Cups)
@@ -529,6 +530,11 @@ Port 636 is used for SSL.
 There are also metasploit modules for Windows 2000 SP4 and Windows Xp SP0/SP1
 
 [Back](#summary)
+
+## Port 445 - SMB
+* [Eternal Blue](https://www.hackingarticles.in/smb-penetration-testing-port-445/)
+[Back](#summary)
+
 
 ## Port 554 - RTSP
 RTSP (Real Time Streaming Protocol) is a stateful protocol built on top of tcp usually used for streaming images. Many commercial IP-cameras are running on this port. They often have a GUI interface, so look out for that.
