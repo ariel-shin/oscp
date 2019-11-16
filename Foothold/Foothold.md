@@ -532,6 +532,7 @@ There are also metasploit modules for Windows 2000 SP4 and Windows Xp SP0/SP1
 [Back](#summary)
 
 ## Port 445 - SMB
+* [Port 139 & 445](#port-139-and-445---smbsamba-shares)
 * [Eternal Blue](https://www.hackingarticles.in/smb-penetration-testing-port-445/)
 
 [Back](#summary)
