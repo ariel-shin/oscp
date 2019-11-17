@@ -145,6 +145,8 @@ gcc exploit.c -o exploit
 ``` 
 TO DO
 ```
+* If exploit fails, try copy and pasting it. Sometimes, it just fixes it.. 
+
 [Back](#summary)
 
 ## Cracking Passwords
