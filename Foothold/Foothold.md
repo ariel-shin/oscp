@@ -265,7 +265,6 @@ Ftp-server but it uses UDP
 		* Dirb - /usr/share/dirb/wordlists
 		* wfuzz - /usr/share/wfuzz/wordlists
 		* SecList - /usr/share/SecLists
-	* 
 	* go deeper one level or use dirb
 * dirb 
 	* automatically does the recrusive search 
