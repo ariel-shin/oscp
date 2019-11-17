@@ -253,16 +253,19 @@ Ftp-server but it uses UDP
 ## Port 80/443 - HTTP/HTTPS
 
 ### Web App Methodology
-* nikto -h url -o niktodp80.txt
+* niktto
+	```
+	nikto -h url -o niktodp80.txt
+	```
 * gobuster
 	```
-	gobuster -u url -w wordlist.txt -o gobustedp80
+	gobuster -u url -w wordlist.txt -x txt,php,xml,html -e -o gobustedp80.txt
 	```
 	* Wordlists 
 		* Dirb - /usr/share/dirb/wordlists
 		* wfuzz - /usr/share/wfuzz/wordlists
 		* SecList - /usr/share/SecLists
-	* gobuster -u url -w wordlist.txt -x txt,php,xml,html -e -o gobustedp80.txt
+	* 
 	* go deeper one level or use dirb
 * dirb 
 	* automatically does the recrusive search 
@@ -721,7 +724,8 @@ xfreerdp /v:(target) /u:(user) /p:(password)
 * Brute force 
 ```bf
 rdesktop 192.168.1.101 //check version and sometimes username
-ncrack -vv --user Administrator -P /root/passwords.txt rdp://192.168.1.101
+ncrack -vv -u Administrator -P /root/passwords.txt rdp://192.168.1.101
+ncrack -vv -u Administrator -P /root/passwords.txt -p 3389 192.168.1.101
 ```
 * [RDP Wordlist](https://raw.githubusercontent.com/jeanphorn/wordlist/master/rdp_passlist.txt)
 * msfconsole for ms12-020 is a dos attack; cant use
