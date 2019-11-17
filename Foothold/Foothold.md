@@ -150,6 +150,11 @@ load URL, http://<REMOTE HOST>/webdav/helloworld.txr
 	* [Other languages/compabibility](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet)
 	* [Full shell](http://pentestmonkey.net/tools/web-shells/php-reverse-shell)
 		* wget https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php
+	* Reverse Shell Not working
+		* Try hosting it on port 80 or 443
+		* Try using Apache webserver
+		* Try including the reverse shell with http or https
+
 * Hosting a shell
 	* Python Web Server
 	```
