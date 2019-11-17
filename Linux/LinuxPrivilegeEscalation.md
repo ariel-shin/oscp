@@ -15,7 +15,7 @@
 	* Check Different Ports, e.g. 80, 443
 * Upgrade the shell
 ```
-python -c 'import pty; pty.spawn(“/bin/sh”)'
+python -c 'import pty; pty.spawn("/bin/sh")'
 ```
 * We have credentials
 ```
@@ -145,7 +145,7 @@ gcc exploit.c -o exploit
 ``` 
 TO DO
 ```
-* If exploit fails, try copy and pasting it. Sometimes, it just fixes it.. 
+* If exploit fails, try copy and pasting it as a hidden file (e.g. .test.txt) Sometimes, it just fixes it.. 
 
 [Back](#summary)
 
