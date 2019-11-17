@@ -77,6 +77,29 @@ find . -iname '*config'
 mysql -uroot -ppassword -e 'show databases;' //no spaces for password
 ```
 
+* See who's logged in 
+```w
+w
+```
+
+Display the list of all the users logged in and out since the file /var/log/wtmp was created
+```last
+last root 
+```
+
+* Find places to write files to
+	* View File Permissions
+	```
+	ls -al
+	```
+
+	* If the above command doesn't work, view fstab
+	```
+	cat /etc/fstab
+	//attempt to write to different locations in <mount point>
+	echo "a" > test.txt
+	```
+
 * Check sticky bit
 ```
 find / -perm -1000 -type d 2>/dev/null   # Sticky bit - Only the owner of the directory or the owner of a file can delete or rename here.
