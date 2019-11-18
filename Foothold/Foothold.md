@@ -307,6 +307,10 @@ Ftp-server but it uses UDP
 	```
 	wpscan --url 10.11.1.# --wordlist /usr/share/wordlists/rockyou.txt --username admin 
 	```
+* Drupal
+	```
+	droopescan scan drupal -u IP:PORT
+	```
 
 ### Heartbleed
 
