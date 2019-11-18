@@ -885,6 +885,7 @@ hydra -t 1 -L users.txt -P password.lst -vV 10.11.1.# ftp
 * [Calm down](https://www.youtube.com/watch?v=F28MGLlpP90)
 * Revert the box 
 * Take a breath, look at the nmap scan and start over 
+* Look at all the ports, try hitting it with http, telnet, or nc
 * Fix the exploit
 	* Google the exploit for modified versions 
 * Check searchsploit instead of google
