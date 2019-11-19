@@ -590,6 +590,22 @@ powershell.exe -exec bypass -Command "& {Import-Module .\PowerUp.ps1; Invoke-All
 		* Set up listener 
 		* Should get a reverse shell as system
 		* [More help](https://pentestlab.blog/tag/ms16-032/)
+* [Microsoft Windows 8.1 (x86/x64) - 'ahcache.sys' NtApphelpCacheControl Privilege Escalation](https://www.exploit-db.com/exploits/35661)
+	* Check if UAC is enabled
+	```
+	REG QUERY HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\ /v EnableLUA
+	```
+		* 0x0 = off
+		* 0x1 = on
+		* [More Info](http://support.homeawaysoftware.com/articles/en_US/Article/HASW-Check-or-Change-User-Account-Control-UAC-Status?category=Errors&subdir=propertyplus)
+	* Enable UAC
+	```
+	C:\Windows\System32\cmd.exe /k %windir%\System32\reg.exe ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /t REG_DWORD /d 1 /f
+	```
+		* [More Info](https://www.howtogeek.com/howto/windows-vista/enable-or-disable-uac-from-the-windows-vista-command-line/)
+
+[Back](#summary)
+
 
 ## Manual Enumeration Walk Through
 * [Fuzzy Security](http://www.fuzzysecurity.com/tutorials/16.html)
