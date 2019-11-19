@@ -483,7 +483,8 @@ Powerless.bat
 ```
 * [Offline - Windows Exploit Suggester](https://github.com/GDSSecurity/Windows-Exploit-Suggester)
 ```
-python ~/Desktop/Scripts/WindowsPrivEsc/windows-exploit-suggester.py --database ~/Desktop/Scripts/WindowsPrivEsc/2019-08-19-mssb.xls --systeminfo priv-esc/systeminfo.txt
+python ~/Desktop/Scripts/WindowsPrivEsc/windows-exploit-suggester.py --database ~/Desktop/Scripts/WindowsPrivEsc/2019-08-19-mssb.xls --systeminfo priv-esc/systeminfo.txt > exploit-suggestions.txt 
+cat exploit-suggestions.txt | grep [version number of os]
 ```
 * [Windows Privesc Check](https://github.com/pentestmonkey/windows-privesc-check)
 ```
