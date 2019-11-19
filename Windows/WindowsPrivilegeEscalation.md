@@ -493,9 +493,9 @@ windows-privesc-check2.exe --dump -a > dump.txt
 * [Powershell - Sherlock](https://github.com/rasta-mouse/Sherlock)
 ```
 Sherlock.ps1
-grep -i function Sherlock.ps1
+//grep -i function Sherlock.ps1
 Find-AllVulns
-at the end append: Find-AllVulns
+//OR at the end append: Find-AllVulns
 ```
 * [Powershell - Power Up](https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1)
 One-liners to download the script and run it directly
