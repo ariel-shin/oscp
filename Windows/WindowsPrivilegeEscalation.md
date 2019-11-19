@@ -578,15 +578,18 @@ powershell.exe -exec bypass -Command "& {Import-Module .\PowerUp.ps1; Invoke-All
 		searchsploit -m 39719
 		```
 		* Run powershell script and new command prompt should spawn
-	* If not, modify line 189 & 333
-	```
-	change "C:\Windows\System32\cmd.exe" to "C:\shell.exe"
-	```
-	* Create stageless x64 or x86 reverse shell
-	* Upload shell.exe and 39719.ps1 to the victim box
-	* Set up listener 
-	* Should get a reverse shell as system
-	* [More help](https://pentestlab.blog/tag/ms16-032/)
+	* If not, use [this repo](https://github.com/khr0x40sh/ms16-032)
+	* Still no, 
+		```
+		searchsploit -m 39719
+		//modify line 189 & 333
+		change "C:\Windows\System32\cmd.exe" to "C:\shell.exe"
+		```
+		* Create stageless x64 or x86 reverse shell
+		* Upload shell.exe and 39719.ps1 to the victim box
+		* Set up listener 
+		* Should get a reverse shell as system
+		* [More help](https://pentestlab.blog/tag/ms16-032/)
 
 ## Manual Enumeration Walk Through
 * [Fuzzy Security](http://www.fuzzysecurity.com/tutorials/16.html)
