@@ -21,12 +21,20 @@ python -c 'import pty; pty.spawn("/bin/sh")'
 ```
 sudo su
 ```
-* What's the OS? Version? Architecture? 
+* What's the OS? Version? 
 ```os
 cat /etc/*-release
 uname -i
 lsb_release -a #Debian Based OS
+uname -a
 ```
+* Architecture
+```
+uname -a
+uname -m //just get arch
+```
+	* 32 bit: i686 or i386
+	* 64 bit: x86_64
 
 * Who are we? Where are we?
 ```who
