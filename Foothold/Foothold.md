@@ -212,7 +212,6 @@ wget https://raw.githubusercontent.com/Rhynorater/CVE-2018-15473-Exploit/master/
 
 python sshUsernameEnumExploit.py --port 22 --outputFile enum --outputFormat list --username root 10.11.1.35
 python sshUsernameEnumExploit.py --port 22 --outputFile enum --outputFormat list --username Administrator 10.11.1.35
-
 ```
 
 [Back](#summary)
@@ -318,6 +317,10 @@ Ftp-server but it uses UDP
 		* root:toor
 		* root:password
 	* Use Cewl
+* Look for pages with file arugments 
+	* Try etc/passwd, win.ini
+	* Try RFI
+	* Try null byte
 * WordPress
 	* WPScan
 	* brute force a user
