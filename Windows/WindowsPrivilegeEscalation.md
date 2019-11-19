@@ -497,6 +497,7 @@ Sherlock.ps1
 Find-AllVulns
 //OR at the end append: Find-AllVulns
 ```
+NEED TO LOOK CLOSELY FOR "Appears Vulnerable"
 * [Powershell - Power Up](https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1)
 One-liners to download the script and run it directly
 ```
