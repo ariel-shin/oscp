@@ -195,5 +195,6 @@ LinEnum.sh -t
 * Look for usernames that could have been found
 	* Try to ssh by guessing credentials
 * Google anything running by root
+* Do we have the right type of shell? tty? sh? bash? 
 
 [Back](#summary)
