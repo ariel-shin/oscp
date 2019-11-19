@@ -78,6 +78,8 @@ nmap -sU -T4 10.11.1.# 
 Checks for TCP and UDP
 ```masscan
 masscan -p1-65535,U:1-65535 10.10.10.63 --rate=1000 -e tun0
+
+masscan -p1-65535,U:1-65535 10.10.10.63 --rate=1000 
 ```
 * Scripts
 Find common vulnerabilities
