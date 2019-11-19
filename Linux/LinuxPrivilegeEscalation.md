@@ -21,7 +21,7 @@ python -c 'import pty; pty.spawn("/bin/sh")'
 ```
 tty
 ```
-	* If not, (spawn a TTY shell)[https://github.com/Elinpf/OSCP-survival-guide#Shells]
+If not, (spawn a TTY shell)[https://github.com/Elinpf/OSCP-survival-guide#Shells]
 * We have credentials
 ```
 sudo su
