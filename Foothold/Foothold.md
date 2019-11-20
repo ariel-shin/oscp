@@ -441,6 +441,12 @@ mount -t cifs -o user=USERNAME,sec=ntlm,dir_mode=0077 "//10.10.10.10/My Share" /
 Enum4linux can be used to enumerate windows and linux machines with smb-shares.
 ```enum4linux
 enum4linux -a 192.168.1.120
+
+//grep usernames from enumusers.txt
+awk -F’\‘ '/Local User/{print $1}' enumusers.txt | cut -d'\' -f2 | cut -d' ' -f1
+
+//throw them into hydra to brute force logins
+hydra -L validusers.txt -e nsr ftp://IP
 ```
 
 ### rpcclient
