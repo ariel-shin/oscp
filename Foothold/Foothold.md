@@ -379,12 +379,12 @@ Rpcbind can help us look for NFS-shares. So look out for nfs. Obtain list of ser
 rpcbind -p 192.168.25.#
 
 # if shares exists, then confirm it
-showmount -e 192.168.25.#
 # should list fileshares 
+showmount -e 192.168.25.#
 
 #display fileshares
-df -h 
 # returns /temp 
+df -h 
 
 # create a temp directory to mount fileshare on attacker box
 mkdir /temp/
