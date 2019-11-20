@@ -431,7 +431,7 @@ smbclient //192.168.1.105/ipc$ -U john
 TO DO: Anonymous Login 
 * If you don't provide any password, just click enter, the server might show you the different shares and version of the server. This can be useful information for looking for exploits. There are tons of exploits for smb.
 * So smb, for a linux-user, is pretty much like and ftp or a nfs.
-* Here is a [good guide for how to configure samba][https://help.ubuntu.com/community/How%20to%20Create%20a%20Network%20Share%20Via%20Samba%20Via%20CLI%20(Command-line%20interface/Linux%20Terminal)%20-%20Uncomplicated,%20Simple%20and%20Brief%20Way]
+* Here is a <a href="https://help.ubuntu.com/community/How%20to%20Create%20a%20Network%20Share%20Via%20Samba%20Via%20CLI%20(Command-line%20interface/Linux%20Terminal)%20-%20Uncomplicated,%20Simple%20and%20Brief%20Way">good gudie for how to configure samba</a>
 ```mount
 mount -t cifs -o user=USERNAME,sec=ntlm,dir_mode=0077 "//10.10.10.10/My Share" /mnt/cifs
 ```
