@@ -309,6 +309,7 @@ Ftp-server but it uses UDP
 * Google the page 
 * Login Console
 	* Google it 
+		*site:ovidentia.org "admin" + "password"
 	* Look for usernames
 	* Guess passwords
 		* root, toor, password, admin, administrator
