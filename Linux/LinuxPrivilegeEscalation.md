@@ -6,6 +6,7 @@
 * [Process](#Process)
 * [Compiling Exploits](Compiling-Exploits)
 * [Cracking Passwords](#Cracking-Passwords)
+* [Transferring Files](#Transferring-files)
 * [Automated Scripts](#Automated-Scripts)
 * [What to do when youre stuck](#What-to-do-when-youre-stuck)
 * [Resources](#Resources)
@@ -177,6 +178,8 @@ wget
 ```
 wget URL --no-check-certificate
 ```
+
+[Back](#summary)
 
 ## Automated Scripts
 * [linuxprivchecker.py](https://github.com/sleventyeleven/linuxprivchecker/blob/master/linuxprivchecker.py)
