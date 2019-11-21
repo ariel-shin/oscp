@@ -254,6 +254,25 @@ qwinsta
 	```
 	Get-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WinLogon' | select "Default*"
 	```
+- Look at system and system32
+	```
+	cd C:\Windows\system 
+	dir system
+	//look for files not usually in system32
+	//when you install an app, it will create a folder
+	//look for installed softwares vuln to privesc
+	```
+	32 bit files
+	```
+	cd C:\Windows\system32 
+	dir system32
+	//look for files not usually in system32
+	```
+
+	run tasklist - pulls all running processes
+	```
+	tasklist
+	```
 - List running services
 	* A service running as Administrator/SYSTEM with incorrect file permissions might allow EOP. 
 	* Interested in services wehre permissions are: ***BUILTIN\USERS*** with ***(F)*** or ***(C)*** or ***(M)***
