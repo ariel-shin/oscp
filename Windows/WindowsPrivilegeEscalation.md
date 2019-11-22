@@ -639,8 +639,8 @@ powershell.exe -exec bypass -Command "& {Import-Module .\PowerUp.ps1; Invoke-All
 * [Spreadsheet with Resources](https://docs.google.com/spreadsheets/d/12bT8APhWsL-P8mBtWCYu4MLftwG1cPmIL25AEBtXDno/edit#gid=2075148101)
 * [Walkthrough](https://www.absolomb.com/2018-01-26-Windows-Privilege-Escalation-Guide/)
 * [Alt Walkthrough](https://pentest.blog/windows-privilege-escalation-methods-for-pentesters/)
+* [Alt 2 Walkthrough](https://www.roguesecurity.in/2018/12/02/a-guide-for-windows-penetration-testing/)
 * [Useful Commands for Tools](https://github.com/frizb/Windows-Privilege-Escalation)
-
 [Back](#summary)
 
 ## Nothing is working --> SOS
