@@ -488,6 +488,8 @@ nbtscan -r 192.168.1.1/24
 ```
 * [Netbios Write-up](https://null-byte.wonderhowto.com/how-to/enumerate-netbios-shares-with-nbtscan-nmap-scripting-engine-0193957/)
 
+* [Walk through](https://0xdf.gitlab.io/2018/12/02/pwk-notes-smb-enumeration-checklist-update1.html#list-shares) if promising results from previous tools
+
 [Back](#summary)
 
 ## Port 143/993 - IMAP
