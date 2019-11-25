@@ -490,6 +490,16 @@ nbtscan -r 192.168.1.1/24
 
 * [Walk through](https://0xdf.gitlab.io/2018/12/02/pwk-notes-smb-enumeration-checklist-update1.html#list-shares) if promising results from previous tools
 
+* [mounting SMB Shares](https://www.tldp.org/HOWTO/SMB-HOWTO-8.html)
+```
+smbclient \\\\10.11.1.#\\ipc$
+smbclient "\\\\10.11.1.#\\spaced share"
+
+ls
+
+get //filename
+```
+
 [Back](#summary)
 
 ## Port 143/993 - IMAP
