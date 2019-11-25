@@ -904,8 +904,8 @@ john textfile
 ```
 hydra -L users.txt -e nsr ftp://IPADDRESS
 ```
-	* -e nsr: normal, backward, and blank
-		* e.g. ftp:ftp, ftp:ptf, ftp:""
+	- -e nsr: normal, backward, and blank
+		- e.g. ftp:ftp, ftp:ptf, ftp:""
 Brute force with a list of passwords
 ```
 cp /usr/share/john/password.lst password.lst
