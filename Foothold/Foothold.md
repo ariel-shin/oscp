@@ -335,6 +335,10 @@ Ftp-server but it uses UDP
 	```
 	droopescan scan drupal -u IP:PORT
 	```
+* Apache Docs are present
+	* Sec Lists - Apache
+	* Check other sites
+	* look for Apache version vulnerability
 
 ### Heartbleed
 
