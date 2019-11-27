@@ -148,6 +148,12 @@ sudo nmap --interactive
 nmap> !sh
 id 
 ```
+* look for passwords
+```
+//cd into folder
+grep -rni "password" 2> /dev/null
+//removes Permission Denied
+```
 [Back](#summary)
 
 ## Compiling Exploits
