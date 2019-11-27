@@ -17,6 +17,7 @@
 * Upgrade the shell
 ```
 python -c 'import pty; pty.spawn("/bin/sh")'
+python -c 'import pty; pty.spawn("/bin/bash")'
 ```
 * Are we tty
 ```
