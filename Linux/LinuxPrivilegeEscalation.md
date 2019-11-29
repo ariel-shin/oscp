@@ -17,6 +17,7 @@
 * Upgrade the shell
 ```
 python -c 'import pty; pty.spawn("/bin/sh")'
+python -c 'import pty; pty.spawn("/bin/bash")'
 ```
 * Are we tty
 ```
@@ -146,6 +147,12 @@ find / -name ftp
 sudo nmap --interactive
 nmap> !sh
 id 
+```
+* look for passwords
+```
+//cd into folder
+grep -rni "password" 2> /dev/null
+//removes Permission Denied
 ```
 [Back](#summary)
 
