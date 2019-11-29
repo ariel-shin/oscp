@@ -114,6 +114,15 @@ load URL, http://<REMOTE HOST>/webdav/helloworld.txr
 ### LFI
 * End Files with %00 (Null Byte)
 	* E.g. /etc/passwd%00
+* Look for /etc/passwd and /etc/shadow
+	* vim passwd.txt
+	* vim shadow.txt
+	```
+	unshadow passwd.txt shadow.txt > passwords.txt
+	john passwords.txt
+	john --wordlist=/usr/share/wordlists/sqlmap.txt passwords.txt
+	john --show passwords.txt
+	```
 
 ### RFI
 * PHP Reverse Shell
