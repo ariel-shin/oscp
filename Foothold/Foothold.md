@@ -108,7 +108,7 @@ pass: xampp
 
 put /tmp/helloworld.txt
 ```
-load URL, http://<REMOTE HOST>/webdav/helloworld.txr
+load URL, http://<REMOTE HOST>/webdav/helloworld.txt
 
 
 ### LFI
@@ -351,6 +351,11 @@ Ftp-server but it uses UDP
 	* TODO: Need to finish
 
 ### Heartbleed
+* [Heartbleed Scanner](https://github.com/sensepost/heartbleed-poc)
+* Usage: heartbleed-poc.py server [options]
+* nmap --script=ssl-heartbleed -p 443
+* msf > use auxiliary/scanner/ssl/openssl_heartbleed msf auxiliary(openssl_heartbleed) > show options
+
 
 #### nmap 
 ```heartbleed
