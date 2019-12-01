@@ -395,7 +395,7 @@ retr 5
 RFC: 1833
 Rpcbind can help us look for NFS-shares. So look out for nfs. Obtain list of services running with RPC:
 ```rpcbind
-rpcbind -p 192.168.25.#
+rpcbind 192.168.25.#
 
 # if shares exists, then confirm it
 # should list fileshares 
