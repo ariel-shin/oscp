@@ -395,7 +395,9 @@ retr 5
 RFC: 1833
 Rpcbind can help us look for NFS-shares. So look out for nfs. Obtain list of services running with RPC:
 ```rpcbind
-rpcbind 192.168.25.#
+rpcbind [IP]
+
+rpcinfo -p [IP]
 
 # if shares exists, then confirm it
 # should list fileshares 
@@ -436,9 +438,30 @@ nmap 192.168.0.101 --script=msrpc-enum
 [Back](#summary)
 
 ## Port 139 and 445 - SMB/Samba Shares
+### samba 
 Samba is a service that enables the user to share files with other machines. It has interoperatibility, which means that it can share stuff between linux and windows systems. A windows user will just see an icon for a folder that contains some files. Even though the folder and files really exists on a linux-server.
-
-[Back](#summary)
+* Save the script below as smbver.sh
+	* Sometimes misses and needs to be run a second time
+	* Numbers in output are mushed together, but nothing you shouldn't be able to figure out (ie 227 = 2.2.7)
+* Identify samba version with this script
+```
+#!/bin/sh
+#Author: rewardone
+#Description:
+# Requires root or enough permissions to use tcpdump
+# Will listen for the first 7 packets of a null login
+# and grab the SMB Version
+#Notes:
+# Will sometimes not capture or will print multiple
+# lines. May need to run a second time for success.
+if [ -z $1 ]; then echo "Usage: ./smbver.sh RHOST {RPORT}" && exit; else rhost=$1; fi
+if [ ! -z $2 ]; then rport=$2; else rport=139; fi
+tcpdump -s0 -n -i tap0 src $rhost and port $rport -A -c 7 2>/dev/null | grep -i "samba\|s.a.m" | tr -d '.' | grep -oP 'UnixSamba.*[0-9a-z]' | tr -d '\n' & echo -n "$rhost: " &
+echo "exit" | smbclient -L $rhost 1>/dev/null 2>/dev/null
+echo "" && sleep .1
+```
+* Google for exploit 
+* Can also use Metasploit module scanner/smb/smb_version to determine Samba version
 
 ### smbclient 
 * For linux-users you can log in to the smb-share using smbclient, like this:
