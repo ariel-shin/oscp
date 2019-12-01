@@ -120,7 +120,7 @@ load URL, http://<REMOTE HOST>/webdav/helloworld.txt
 	```
 	unshadow passwd.txt shadow.txt > passwords.txt
 	john passwords.txt
-	john --wordlist=/usr/share/wordlists/sqlmap.txt passwords.txt
+	john --wordlist=/usr/share/wordlists/sqlmap.txt --format=md5crypt passwords.txt
 	john --show passwords.txt
 	```
 
