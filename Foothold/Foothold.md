@@ -114,7 +114,7 @@ load URL, http://<REMOTE HOST>/webdav/helloworld.txt
 ### LFI
 * End Files with %00 (Null Byte)
 	* E.g. /etc/passwd%00
-* Look for /etc/passwd and /etc/shadow
+* [Look for /etc/passwd and /etc/shadow](https://null-byte.wonderhowto.com/how-to/crack-shadow-hashes-after-getting-root-linux-system-0186386/)
 	* vim passwd.txt
 	* vim shadow.txt
 	```
