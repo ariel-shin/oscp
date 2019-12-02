@@ -154,6 +154,8 @@ id
 grep -rni "password" 2> /dev/null
 //removes Permission Denied
 ```
+* Look at original low priv exploit code, might have clues as to how to privesc
+
 [Back](#summary)
 
 ## Compiling Exploits

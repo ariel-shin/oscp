@@ -427,6 +427,7 @@ accesschk.exe -uwcqv "Authenticated Users" C:\*.* /accepteula
 	$ netsh firewall show config
 	```
 
+- Look at original low priv exploit code, might have clues as to how to privesc
 
 [Back](#summary)
 
