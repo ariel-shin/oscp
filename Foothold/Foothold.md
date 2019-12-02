@@ -537,7 +537,7 @@ metasploit: use exploit/windows/smb/psexec
 
 ### Scanning with nmap 
 ```nmap139445
-nmap -p 139,445 192.168.1.1/24 --script smb-enum-shares.nse, smb-os-discovery.nse
+nmap -p 139,445 --script smb-enum-shares.nse, smb-os-discovery.nse 192.168.1.1
 nmap -p 139,445 --script "smb-vuln*" 10.11.11.#
 nmap -n -v -sV -Pn -p 445 --script=smb-ls,smb-mbenum,smb-enum-shares,smb-enum-users,smb-os-discovery,smb-security-mode,smbv2-enabled,smbv2-enabled,smb-vuln* 192.168.1.10
 ```
