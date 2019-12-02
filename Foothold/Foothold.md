@@ -117,12 +117,20 @@ load URL, http://<REMOTE HOST>/webdav/helloworld.txt
 * [Look for /etc/passwd and /etc/shadow](https://null-byte.wonderhowto.com/how-to/crack-shadow-hashes-after-getting-root-linux-system-0186386/)
 	* vim passwd.txt
 	* vim shadow.txt
-	```
+	```unshadow
 	unshadow passwd.txt shadow.txt > passwords.txt
 	john passwords.txt
 	john --wordlist=/usr/share/wordlists/sqlmap.txt --format=md5crypt passwords.txt
 	john --show passwords.txt
 	```
+* Webmin Local File Disclosure
+	* Look at source code and its more of a [LFI](https://www.exploit-db.com/exploits/2017)
+	* We have LFI and we want to get RFI so we upload a reverse shell with our low priv shell
+	* We upload a perl reverse shell and rename to .cgi
+	```cgi
+	cp /usr/share/webshells/perl/perl-reverse-shell.pl
+	```
+	* We access the reverse shell using our LFI and set up a listener
 
 ### RFI
 * PHP Reverse Shell
