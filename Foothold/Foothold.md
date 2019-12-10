@@ -219,6 +219,7 @@ nmap --script=ftp-proftpd-backdoor,ftp-vsftpd-backdoor,ftp-anon,ftp-libopie,,ftp
 [Back](#summary)
 
 ## Port 22 - SSH 
+* Often gets bruteforced with username + pass or need private key to access this box
 * Can determine version by scanning it with nmap or connecting to it with nc or telnet
 ```nc
 nc 192.168.1.10 22
@@ -245,6 +246,19 @@ nmap -p 22 -n -v -sV -Pn --script ssh-auth-methods --script-args ssh.user=root 1
 nmap -p 22 -n -v -sV -Pn --script ssh-hostkey 192.168.1.10 
 nmap -p 22 -n -v -sV -Pn --script ssh-brute --script-args userdb=user_list.txt,passdb=password_list.txt 192.168.1.10
 ```
+
+* If you see multiple SSH services on different ports with the same key, they could be [bad keys](https://github.com/rapid7/ssh-badkeys)
+```
+ssh root@10.11.1.71
+ECDSA key fingerprint is SHA256...
+```
+
+* OSCP recommended SSH brute force tools
+	* A custom wordlist for the target (using another vulnerability or CeWL/wordhound)
+	* Hydra (don't forget about "-e [VALUES]")
+	* Patator (Password fuzzer rather than brute force)
+	* Crowbar (great for brute forcing private keys)
+	* Metasploit's ssh_login.
 
 [Back](#summary)
 
