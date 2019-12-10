@@ -120,10 +120,10 @@ davtest -url http://localhost/davdir
 		```
 		cadaver http://url/
 
+		put test.txt
 		copy test.txt test.asp;.txt
 		move test.txt test.asp;.txt
 		```
-
 
 ### LFI
 * End Files with %00 (Null Byte)
