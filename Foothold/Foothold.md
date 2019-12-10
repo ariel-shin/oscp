@@ -437,6 +437,8 @@ python shocker.py -H 10.11.1.# --cgi /cgi-bin/admin.cgi
 ```
 * Need to get a reverse shell
 	* Metasploit 
+		* auxiliary/scanner/http/apache_mod_cgi_bash_env
+		* exploit/multi/http/apache_mod_cgi_bash_env_exec
 	```
 	shell
 	```
