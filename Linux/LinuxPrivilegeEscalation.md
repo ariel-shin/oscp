@@ -119,7 +119,7 @@ last root
 	```stickybit
 	find / -perm -1000 -type d 2>/dev/null   # Sticky bit - Only the owner of the directory or the owner of a file can delete or rename here.
 	find / -perm -g=s -type f 2>/dev/null    # SGID (chmod 2000) - run as the group, not the user who started it.
-	find / -perm -u=s -type f 2>/dev/null    # SUID (chmod 4000) - run as the owner, not the user who started it.
+	find / -perm -u=s -type f 2>/dev/null    # SUID (chmod 4000) - run as the owner, not the user who started it
 
 	find / -perm -g=s -o -perm -u=s -type f 2>/dev/null    # SGID or SUID
 	for i in `locate -r "bin$"`; do find $i \( -perm -4000 -o -perm -2000 \) -type f 2>/dev/null; done    # Looks in 'common' places: /bin, /sbin, /usr/bin, /usr/sbin, /usr/local/bin, /usr/local/sbin and any other *bin, for SGID or SUID (Quicker search)
@@ -140,6 +140,10 @@ find / -name nc<em>
 find / -name netcat</em>
 find / -name tftp*
 find / -name ftp
+
+whereis wget
+whereis nc
+whereis netcat
 ```
 
 * Look at the original low privilege shell for notes 
@@ -198,9 +202,9 @@ wget URL --no-check-certificate
 ## Automated Scripts
 * [linuxprivchecker.py](https://github.com/sleventyeleven/linuxprivchecker/blob/master/linuxprivchecker.py)
 * [LinEnum.sh](https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh)
-```
-LinEnum.sh -t
-```
+	```
+	LinEnum.sh -t
+	```
 	* t: thorough
 * [Unix-Privesc-Check](https://github.com/pentestmonkey/unix-privesc-check)
 * [Linux Exploit Suggester](https://tools.kali.org/exploitation-tools/linux-exploit-suggester)
