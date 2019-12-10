@@ -94,21 +94,35 @@ nmap -T4 -p445 --script "ftp*" 10.10.10.# -oN outputFile3.txt
 ## File Upload Capability
 
 ### Tools
+
+#### WebDav
+* nmap 
+```
+nmap --script http-webdav-scan -p80,8080 <target>
+```
+
 * davtest
 ```davtest
 davtest -url http://localhost/davdir
 ```
 
 * cadavaer
-Example with webdav xampp default creds
-```cadaver
-cadaver http://<REMOTE HOST>/webdav/
-user: wampp
-pass: xampp
+	* Example with webdav xampp default creds
+		```cadaver
+		cadaver http://<REMOTE HOST>/webdav/
+		user: wampp
+		pass: xampp
 
-put /tmp/helloworld.txt
-```
-load URL, http://<REMOTE HOST>/webdav/helloworld.txt
+		put /tmp/helloworld.txt
+		```
+		* load URL, http://<REMOTE HOST>/webdav/helloworld.txt
+	* [Example with file upload restrictions bypass](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Post%20Exploitation/cadaver.md)
+		```
+		cadaver http://url/
+
+		copy test.txt test.asp;.txt
+		move test.txt test.asp;.txt
+		```
 
 
 ### LFI
