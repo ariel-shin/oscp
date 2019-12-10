@@ -155,7 +155,7 @@ id
 ```
 * look for passwords
 ```
-//cd into folder
+//cd into folder e.g. /var/www/html
 grep -rni "password" 2> /dev/null
 //removes Permission Denied
 ```
@@ -172,10 +172,6 @@ cat /etc/ssh/sshd_config
 ``` 
 gcc exploit.c -o exploit
 ./exploit
-```
-* mingw32
-``` 
-TO DO
 ```
 * If exploit fails, try copy and pasting it as a hidden file (e.g. .test.txt) Sometimes, it just fixes it.. 
 
