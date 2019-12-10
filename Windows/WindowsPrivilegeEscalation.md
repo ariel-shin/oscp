@@ -11,6 +11,7 @@
 * [Transfer files](#Transfer-files)
 * [Process](#Process)
 * [Payloads](#Payloads)
+* [Compiling Exploits](#Compiling-Exploits)
 * [Bypassing AV](#Bypassing-AV)
 * [Powershell](#Powershell)
 * [Automated Tools](#Automated-Tools)
@@ -485,6 +486,18 @@ accesschk.exe -uwcqv "Authenticated Users" C:\*.* /accepteula
 	```
 [Back](#summary)
 
+## Compiling Exploits
+* gcc
+``` 
+gcc exploit.c -o exploit
+./exploit
+```
+* mingw32 - windows cross-compiler
+``` 
+apt-get install mingw-w64
+i686-w64-mingw32-gcc file.c -o output.exe
+```
+[Back](#summary)
 
 ## Bypassing AV
 * Textbook
