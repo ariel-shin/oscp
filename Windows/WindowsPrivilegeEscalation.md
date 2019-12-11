@@ -15,6 +15,7 @@
 * [Bypassing AV](#Bypassing-AV)
 * [Powershell](#Powershell)
 * [Automated Tools](#Automated-Tools)
+* [Tricky Exploits](#Tricky-Exploits)
 * [Manual Enumeration Walk Through](#Manual-Enumeration-Walk-Through)
 * [Resources](#Resources)
 * [Nothing is working --> SOS](#nothing-is-working----sos)
