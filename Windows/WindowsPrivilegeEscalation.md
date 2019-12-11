@@ -508,7 +508,7 @@ gcc exploit.c -o exploit
 * mingw32 - windows cross-compiler
 ``` 
 apt-get install mingw-w64
-i686-w64-mingw32-gcc file.c -o output.exe
+i686-w64-mingw32-gcc exploit.c -lws2_32 -o exploit.exe
 ```
 [Back](#summary)
 
