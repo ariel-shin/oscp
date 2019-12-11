@@ -196,7 +196,7 @@ wget URL --no-check-certificate
 [Back](#summary)
 
 ## Automated Scripts
-* (Finding writable directories)[https://sushant747.gitbooks.io/total-oscp-guide/privilege_escalation_-_linux.html]
+* [Finding writable directories](https://sushant747.gitbooks.io/total-oscp-guide/privilege_escalation_-_linux.html)
 ```
 #World writable files directories
 find / -writable -type d 2>/dev/null
