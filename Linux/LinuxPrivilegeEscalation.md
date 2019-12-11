@@ -196,6 +196,19 @@ wget URL --no-check-certificate
 [Back](#summary)
 
 ## Automated Scripts
+* (Finding writable directories)[https://sushant747.gitbooks.io/total-oscp-guide/privilege_escalation_-_linux.html]
+```
+#World writable files directories
+find / -writable -type d 2>/dev/null
+find / -perm -222 -type d 2>/dev/null
+find / -perm -o w -type d 2>/dev/null
+
+# World executable folder
+find / -perm -o x -type d 2>/dev/null
+
+# World writable and executable folders
+find / \( -perm -o w -perm -o x \) -type d 2>/dev/null
+```
 * [linuxprivchecker.py](https://github.com/sleventyeleven/linuxprivchecker/blob/master/linuxprivchecker.py)
 * [LinEnum.sh](https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh)
 	```
