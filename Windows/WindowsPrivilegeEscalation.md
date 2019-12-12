@@ -126,7 +126,7 @@ C:\Inetpub\wwwroot
 ```
 dir shell.asp /s /p
 ```
-* Look for all writeable dirs (LOTS OF OUTPUTS)
+* Look for all writeable dirs (LOTS OF OUTPUT)
 ```
 dir /a-r-d /s /b
 ```
