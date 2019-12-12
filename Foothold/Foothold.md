@@ -425,6 +425,7 @@ Ftp-server but it uses UDP
 	* Try null byte
 * WordPress
 	* WPScan
+		* Check for exploits for WordPress Version AND Plugins
 	* brute force a user
 	```
 	wpscan --url 10.11.1.# --wordlist /usr/share/wordlists/rockyou.txt --username admin 
