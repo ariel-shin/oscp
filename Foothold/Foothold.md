@@ -691,7 +691,7 @@ You can have read-only access to the snmp.Often just with the community string p
 snmp-check
 ```
 snmp-check -c public  10.11.1.13 
-*also check private, public, manager 
+//also check private, public, manager 
 ```
 
 Common community strings
