@@ -99,6 +99,8 @@ find . -iname '*config'
 * mysql
 ```mysql
 mysql -uroot -ppassword -e 'show databases;' //no spaces for password
+
+select * from information_schema.columns where column_name like '%password%';
 ```
 
 * See who's logged in 
