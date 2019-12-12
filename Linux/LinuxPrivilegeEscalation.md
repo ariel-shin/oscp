@@ -231,6 +231,7 @@ find / \( -perm -o w -perm -o x \) -type d 2>/dev/null
 * Look for usernames that could have been found
 	* Try to ssh by guessing credentials
 * Google anything running by root
+	* Google common errors for compilation issues
 * Do we have the right type of shell? tty? sh? bash? 
 
 [Back](#summary)
