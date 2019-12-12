@@ -101,6 +101,10 @@ find . -iname '*config'
 mysql -uroot -ppassword -e 'show databases;' //no spaces for password
 
 select * from information_schema.columns where column_name like '%password%';
+
+//column = password
+//table = table with password column
+select COLUMN from TABLE limit 1;
 ```
 
 * See who's logged in 
