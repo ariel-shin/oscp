@@ -693,5 +693,6 @@ powershell.exe -exec bypass -Command "& {Import-Module .\PowerUp.ps1; Invoke-All
 	* Try to add rdp access
 	* RDP by guessing credentials
 * Google anything running as system 
+	* Google any compilation issues
 
 [Back](#summary)
