@@ -1105,6 +1105,8 @@ hash-identifier [HASH]
 * John The Ripper
 ```
 john textfile
+
+john hashes.txt --wordlist=/usr/share/wordlists/rockyou.txt
 ```
 
 [Back](#summary)
